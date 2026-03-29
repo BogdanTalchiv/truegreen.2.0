@@ -1,0 +1,143 @@
+// Fade animations
+[data-aos="fade-up"] {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+
+  &.aos-animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+[data-aos="fade-in"] {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+
+  &.aos-animate {
+    opacity: 1;
+  }
+}
+
+[data-aos="scale-in"] {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+
+  &.aos-animate {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+[data-aos="slide-right"] {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+
+  &.aos-animate {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+[data-aos="slide-left"] {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+
+  &.aos-animate {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+// Count-up animation placeholder
+.count-up {
+  display: inline-block;
+}
+
+// Navbar underline animation
+.nav-link-animated {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: $tg-primary;
+    transition: width 0.3s ease, left 0.3s ease;
+  }
+
+  &:hover::after,
+  &.active::after {
+    width: 100%;
+    left: 0;
+  }
+}
+
+// Page transitions
+.page-fade-enter-active,
+.page-fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.page-fade-enter-from,
+.page-fade-leave-to {
+  opacity: 0;
+}
+
+// Scroll top button
+.scroll-top-enter-active,
+.scroll-top-leave-active {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.scroll-top-enter-from,
+.scroll-top-leave-to {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+// Hamburger animation
+.hamburger-animated {
+  .bar {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: $tg-text-primary;
+    transition: $transition-base;
+    margin: 5px 0;
+  }
+
+  &.active {
+    .bar:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    .bar:nth-child(2) {
+      opacity: 0;
+    }
+    .bar:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+  }
+}
+
+// Reduced motion
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  [data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

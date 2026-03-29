@@ -1,0 +1,121 @@
+// Background utilities
+.bg-tg-light {
+  background-color: $tg-bg-light !important;
+}
+
+.bg-tg-dark {
+  background-color: $tg-bg-dark !important;
+  color: $tg-text-light;
+}
+
+.bg-tg-gradient {
+  @include gradient-primary;
+  color: $tg-text-light;
+}
+
+// Section styling
+.tg-section {
+  @include section-padding;
+  position: relative;
+  overflow: hidden;
+}
+
+.tg-section-alt {
+  @extend .tg-section;
+  background-color: $tg-bg-light;
+}
+
+// Badge
+.tg-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.375rem 0.875rem;
+  border-radius: 2rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  white-space: nowrap;
+
+  &--primary {
+    background: rgba($tg-primary, 0.1);
+    color: $tg-primary;
+  }
+
+  &--accent {
+    background: rgba($tg-accent, 0.1);
+    color: $tg-accent;
+  }
+
+  &--white {
+    background: rgba(255, 255, 255, 0.2);
+    color: $tg-text-light;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+}
+
+// Rating stars
+.tg-stars {
+  color: $tg-accent;
+  display: inline-flex;
+  gap: 2px;
+}
+
+// Divider with icon
+.tg-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem 0;
+
+  &::before,
+  &::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: $tg-border;
+  }
+}
+
+// Result box
+.tg-result-box {
+  @include gradient-primary;
+  color: $tg-text-light;
+  border-radius: $card-border-radius;
+  padding: 1.5rem 2rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.125rem;
+}
+
+// CTA Box
+.tg-cta-box {
+  @include gradient-primary;
+  color: $tg-text-light;
+  border-radius: $border-radius-xl;
+  padding: 3rem;
+  text-align: center;
+
+  @media (max-width: 767.98px) {
+    padding: 2rem 1.5rem;
+  }
+}
+
+// Skip navigation (a11y)
+.skip-nav {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  z-index: 9999;
+  padding: 1rem 2rem;
+  background: $tg-primary;
+  color: $tg-text-light;
+  font-weight: 600;
+  border-radius: 0 0 $border-radius 0;
+  transition: top 0.2s ease;
+
+  &:focus {
+    top: 0;
+  }
+}
+
+// Before/After slider styles are now scoped in TgBeforeAfter.vue

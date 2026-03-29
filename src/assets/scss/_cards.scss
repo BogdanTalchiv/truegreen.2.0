@@ -1,0 +1,149 @@
+.tg-card {
+  background: $tg-bg-white;
+  border-radius: $card-border-radius;
+  padding: 2rem;
+  box-shadow: $box-shadow;
+  border: 1px solid transparent;
+  @include card-hover;
+
+  @media (max-width: 767.98px) {
+    padding: 1.5rem;
+  }
+}
+
+.tg-card-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: $border-radius-lg;
+  @include gradient-primary-light;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $tg-text-light;
+  font-size: 1.75rem;
+  margin-bottom: 1.25rem;
+  flex-shrink: 0;
+}
+
+.tg-card-title {
+  font-family: $headings-font-family;
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  color: $tg-text-primary;
+}
+
+.tg-card-text {
+  color: $tg-text-secondary;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.tg-contact-card {
+  background: $tg-bg-white;
+  border-radius: $card-border-radius;
+  padding: 1.5rem;
+  text-align: center;
+  border: 1px solid $tg-border;
+  transition: $transition-base;
+
+  &:hover {
+    border-color: $tg-primary-light;
+    box-shadow: $box-shadow;
+    transform: translateY(-2px);
+  }
+
+  .tg-contact-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: rgba($tg-primary, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $tg-primary;
+    font-size: 1.5rem;
+    margin: 0 auto 1rem;
+  }
+}
+
+.tg-step-card {
+  position: relative;
+  padding-left: 4.5rem;
+
+  @media (max-width: 767.98px) {
+    padding-left: 3.5rem;
+  }
+}
+
+.tg-step-number {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  @include gradient-primary;
+  color: $tg-text-light;
+  font-family: $headings-font-family;
+  font-weight: 700;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba($tg-primary, 0.3);
+
+  @media (max-width: 767.98px) {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1rem;
+  }
+}
+
+.tg-testimonial-card {
+  background: $tg-bg-white;
+  border-radius: $card-border-radius;
+  padding: 1.5rem;
+  border: 1px solid $tg-border;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .tg-testimonial-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .tg-testimonial-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    @include gradient-primary-light;
+    color: $tg-text-light;
+    font-weight: 700;
+    font-size: 1.125rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .tg-testimonial-name {
+    font-weight: 600;
+    margin-bottom: 0.125rem;
+  }
+
+  .tg-testimonial-date {
+    font-size: 0.8125rem;
+    color: $tg-text-secondary;
+  }
+
+  .tg-testimonial-text {
+    color: $tg-text-secondary;
+    line-height: 1.6;
+    flex: 1;
+    font-style: italic;
+  }
+}

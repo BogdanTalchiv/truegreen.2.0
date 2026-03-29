@@ -1,0 +1,75 @@
+// Responsive section padding
+@mixin section-padding {
+  padding-top: $section-padding-y-mobile;
+  padding-bottom: $section-padding-y-mobile;
+
+  @media (min-width: 768px) {
+    padding-top: $section-padding-y-tablet;
+    padding-bottom: $section-padding-y-tablet;
+  }
+
+  @media (min-width: 992px) {
+    padding-top: $section-padding-y-desktop;
+    padding-bottom: $section-padding-y-desktop;
+  }
+}
+
+// Gradient background
+@mixin gradient-primary {
+  background: linear-gradient(135deg, $tg-primary 0%, $tg-primary-dark 100%);
+}
+
+@mixin gradient-primary-light {
+  background: linear-gradient(135deg, $tg-primary-light 0%, $tg-primary 100%);
+}
+
+// Glass effect
+@mixin glass-effect {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+// Card hover effect
+@mixin card-hover {
+  transition: $transition-base;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $box-shadow-lg;
+    border-color: $tg-primary-light;
+  }
+}
+
+// Text gradient
+@mixin text-gradient {
+  background: linear-gradient(135deg, $tg-primary 0%, $tg-primary-light 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+// Responsive font-size helper
+@mixin responsive-font($desktop, $mobile) {
+  font-size: $mobile;
+
+  @media (min-width: 992px) {
+    font-size: $desktop;
+  }
+}
+
+// Truncate text
+@mixin text-truncate-lines($lines: 3) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+// Focus visible ring
+@mixin focus-ring {
+  &:focus-visible {
+    outline: 3px solid rgba($tg-primary, 0.5);
+    outline-offset: 2px;
+  }
+}

@@ -1,0 +1,282 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "whyUs": "¿Por qué nosotros?",
+    "howItWorks": "Cómo funciona",
+    "solutions": "Soluciones",
+    "testimonials": "Testimonios",
+    "contact": "Contacto",
+    "checkEligibility": "Verificar elegibilidad",
+    "about": "Sobre nosotros",
+    "services": "Servicios",
+    "faq": "Preguntas frecuentes",
+    "blog": "Blog"
+  },
+  "hero": {
+    "title": "Aísla tu desván",
+    "titleHighlight": "sin ningún coste",
+    "titleEnd": "gracias al programa de eficiencia energética",
+    "subtitle": "Más de 1.500 viviendas aisladas con lana mineral certificada. Hasta un 30% de ahorro energético. Sin anticipo y sin burocracia.",
+    "cta": "¿Soy elegible?",
+    "rating": "4.9",
+    "ratingCount": "+600 opiniones",
+    "installations": "+1.500 instalaciones realizadas",
+    "badges": {
+      "funded": "100% Subvencionado",
+      "noCost": "Sin Coste",
+      "noBureaucracy": "Sin Burocracia",
+      "official": "Programa Oficial",
+      "supervised": "Supervisado"
+    },
+    "howPossible": "¿Cómo es posible?"
+  },
+  "whyUs": {
+    "sectionTitle": "¿Por qué elegir",
+    "sectionTitleHighlight": "TrueGreen?",
+    "sectionSubtitle": "Intermediarios oficiales del programa con más de 1.500 instalaciones verificadas. Soluciones profesionales y garantizadas para tu hogar.",
+    "cards": {
+      "experience": {
+        "title": "Experiencia demostrada",
+        "description": "Más de 1.500 viviendas aisladas en múltiples regiones por técnicos certificados, con ahorros verificados de hasta el 30% en calefacción."
+      },
+      "guarantee": {
+        "title": "Garantía oficial",
+        "description": "Empresa registrada en el programa oficial. Cada expediente es verificado por un organismo acreditado y supervisado."
+      },
+      "team": {
+        "title": "Equipo especializado",
+        "description": "Más de 100 profesionales cualificados a tu disposición para un servicio impecable."
+      },
+      "peace": {
+        "title": "Sin preocupaciones",
+        "description": "Sin burocracia, sin requisitos de ingresos y sin anticipo. Las compañías energéticas financian el 100% de las obras."
+      }
+    },
+    "officialProgram": "Programa regulado y supervisado por organismos oficiales"
+  },
+  "howItWorks": {
+    "sectionTag": "Programa oficial",
+    "sectionTitle": "¿Cómo funciona el programa?",
+    "sectionSubtitle": "Un mecanismo oficial que financia el 100% de las obras de aislamiento térmico. Así es como funciona, paso a paso:",
+    "steps": {
+      "step1": {
+        "title": "TrueGreen instala y adelanta los costes",
+        "description": "Nuestro equipo realiza la instalación completa de aislamiento. TrueGreen adelanta el 100% de los costes: materiales, mano de obra y transporte. Tú no pagas nada.",
+        "summary": "Instalamos el aislamiento completo. TrueGreen adelanta todos los costes."
+      },
+      "step2": {
+        "title": "Gestionamos toda la documentación",
+        "description": "Preparamos el expediente técnico completo: mediciones, certificados de materiales, cálculo de ahorro energético. No tienes que hacer ningún trámite.",
+        "summary": "Preparamos todo el expediente técnico. Tú no haces nada."
+      },
+      "step3": {
+        "title": "Verificación independiente",
+        "description": "Un organismo verificador acreditado revisa y valida que el ahorro energético es real y conforme a la normativa.",
+        "summary": "Un organismo acreditado verifica el ahorro energético."
+      },
+      "step4": {
+        "title": "Validación y compensación",
+        "description": "El expediente verificado se presenta a la compañía energética que compra los Certificados de Ahorro Energético para cumplir su cuota legal.",
+        "summary": "La compañía energética compensa los costes. El proceso está supervisado."
+      }
+    },
+    "result": "El cliente no paga nada. TrueGreen es compensado por la compañía energética. La compañía cumple su cuota legal. Todo el proceso está supervisado.",
+    "legalLink": "Consulta el marco legal en la página oficial →"
+  },
+  "solutions": {
+    "sectionTag": "Beneficios",
+    "sectionTitle": "Nuestras Soluciones",
+    "sectionSubtitle": "Mejora la eficiencia energética de tu hogar con nuestras soluciones innovadoras del programa oficial. ¡Disfruta de un hogar más confortable, reduce el consumo energético y todo sin ningún coste!",
+    "mainTitle": "Aislamiento de Desvanes con Lana Mineral Insuflada",
+    "mainDescription": "Ideal para espacios no habitables. Sistema 100% insuflado sin obras, con eficiencia energética garantizada.",
+    "beforeAfter": {
+      "before": "Antes",
+      "after": "Después",
+      "hint": "Desliza para comparar antes y después de la instalación"
+    },
+    "categories": {
+      "savings": {
+        "title": "Ahorro",
+        "items": [
+          "Hasta un 45% de reducción en la factura energética",
+          "Sin coste con el programa oficial",
+          "Aumento del valor de la vivienda"
+        ]
+      },
+      "comfort": {
+        "title": "Confort y Seguridad",
+        "items": [
+          "Confort térmico durante todo el año",
+          "Material ignífugo certificado",
+          "Solución ecológica y duradera"
+        ]
+      },
+      "installation": {
+        "title": "Instalación Rápida",
+        "items": [
+          "Instalación en pocas horas",
+          "Sin obras ni desmontajes",
+          "Sistema 100% insuflado, limpio"
+        ]
+      }
+    },
+    "cta": "Solicita tu estudio energético gratuito ahora"
+  },
+  "testimonials": {
+    "sectionTag": "Testimonios reales",
+    "sectionTitle": "Lo Que Dicen Nuestros Clientes",
+    "sectionSubtitle": "Nada habla mejor de la calidad de nuestro trabajo que la experiencia de quienes ya nos han elegido.",
+    "verifiedTitle": "Opiniones Verificadas en Google",
+    "verifiedSubtitle": "Valoraciones reales de propietarios que ya disfrutan de un hogar más eficiente.",
+    "basedOn": "Basado en +600 opiniones",
+    "viewOnGoogle": "Ver en Google →",
+    "reviews": [
+      {
+        "name": "María P.",
+        "date": "enero 2026",
+        "text": "Vi el anuncio en internet, rellené el formulario y en menos de una semana todo estaba listo. Me sorprendió el profesionalismo y la eficiencia del equipo.",
+        "rating": 5
+      },
+      {
+        "name": "Carlos D.",
+        "date": "enero 2026",
+        "text": "Un trabajo espléndido. Trabajadores muy educados que nos explicaron todos los pasos, muy limpios y cuidadosos. Nos sorprendió la rapidez y la confianza. ¡Y es gratis!",
+        "rating": 5
+      },
+      {
+        "name": "Alejandro M.",
+        "date": "diciembre 2025",
+        "text": "Gracias TrueGreen por el aislamiento del desván. Me sorprendió gratamente que lo hicieron todo gratis, ¡un detalle increíble!",
+        "rating": 5
+      },
+      {
+        "name": "Elena V.",
+        "date": "noviembre 2025",
+        "text": "Excelente experiencia de principio a fin. El equipo fue puntual, profesional y limpio. ¡Lo recomiendo con confianza!",
+        "rating": 5
+      },
+      {
+        "name": "Jorge T.",
+        "date": "octubre 2025",
+        "text": "No podía creer que fuera gratis, pero todo se confirmó. Trabajo de calidad, sin ningún coste para nosotros.",
+        "rating": 5
+      }
+    ]
+  },
+  "contact": {
+    "sectionTitle": "Estamos aquí para ti",
+    "sectionSubtitle": "Nuestro equipo de expertos está disponible a través de múltiples canales para ofrecerte la asistencia que necesitas.",
+    "phone": {
+      "label": "Teléfono",
+      "schedule": "L-V 9:00-18:00"
+    },
+    "email": {
+      "label": "Email",
+      "response": "Respuesta en menos de 24 horas"
+    },
+    "whatsapp": {
+      "label": "WhatsApp",
+      "subtitle": "Mensajería instantánea"
+    },
+    "address": {
+      "label": "Dirección"
+    },
+    "ctaTitle": "¿Quieres aislar tu vivienda gratis?",
+    "ctaSubtitle": "Nos comprometemos a responder a todas tus preguntas en un máximo de 24 horas. Solicita tu estudio gratuito ahora.",
+    "ctaButton": "Solicitar estudio gratuito",
+    "ctaCall": "Llamar ahora"
+  },
+  "footer": {
+    "description": "Soluciones profesionales de eficiencia energética para tu hogar. Programa oficial de financiación al 100%.",
+    "quickLinks": "Enlaces rápidos",
+    "contactInfo": "Contacto",
+    "followUs": "Síguenos",
+    "copyright": "© 2026 TrueGreen. Todos los derechos reservados.",
+    "privacy": "Política de privacidad",
+    "terms": "Términos y condiciones"
+  },
+  "common": {
+    "learnMore": "Saber más",
+    "getStarted": "Empezar ahora",
+    "backToHome": "Volver al inicio",
+    "loading": "Cargando...",
+    "error": "Se ha producido un error",
+    "retry": "Intentar de nuevo"
+  },
+  "form": {
+    "firstName": "Nombre",
+    "lastName": "Apellidos",
+    "email": "Correo electrónico",
+    "phone": "Teléfono",
+    "city": "Ciudad",
+    "county": "Provincia",
+    "propertyType": "Tipo de propiedad",
+    "house": "Casa",
+    "apartment": "Piso",
+    "building": "Edificio",
+    "area": "Superficie (m²)",
+    "yearBuilt": "Año de construcción",
+    "hasAttic": "¿Tiene desván/buhardilla?",
+    "yes": "Sí",
+    "no": "No",
+    "postalCode": "Código postal",
+    "message": "Mensaje",
+    "consent": "Acepto el tratamiento de datos personales según la",
+    "privacyLink": "Política de Privacidad",
+    "submit": "Enviar solicitud",
+    "next": "Siguiente",
+    "previous": "Anterior",
+    "step": "Paso",
+    "of": "de",
+    "propertyInfo": "Información de la propiedad",
+    "locationInfo": "Ubicación",
+    "personalInfo": "Datos personales",
+    "success": "¡Tu solicitud ha sido enviada con éxito! Nos pondremos en contacto contigo lo antes posible.",
+    "errors": {
+      "required": "Este campo es obligatorio",
+      "email": "La dirección de correo no es válida",
+      "phone": "El número de teléfono no es válido",
+      "minLength": "Mínimo {min} caracteres",
+      "consent": "Debes aceptar la política de privacidad"
+    }
+  },
+  "about": {
+    "title": "Sobre TrueGreen",
+    "subtitle": "Nuestra misión es hacer la eficiencia energética accesible para todos."
+  },
+  "services": {
+    "title": "Nuestros Servicios",
+    "subtitle": "Soluciones completas de aislamiento térmico y eficiencia energética."
+  },
+  "faq": {
+    "sectionTitle": "Preguntas Frecuentes",
+    "sectionSubtitle": "Respuestas a las preguntas más habituales sobre nuestros servicios.",
+    "items": [
+      {
+        "question": "¿Es realmente gratis?",
+        "answer": "Sí, el programa oficial financia el 100% de los costes de instalación. No tienes que pagar nada por adelantado y no hay costes ocultos."
+      },
+      {
+        "question": "¿Cuánto dura la instalación?",
+        "answer": "La instalación completa suele durar entre 2 y 4 horas, dependiendo del tamaño del desván."
+      },
+      {
+        "question": "¿Qué tipo de aislamiento utilizáis?",
+        "answer": "Utilizamos lana mineral insuflada, un material certificado, ignífugo y ecológico, con excelentes propiedades de aislamiento térmico."
+      },
+      {
+        "question": "¿Quién puede beneficiarse del programa?",
+        "answer": "Cualquier propietario de vivienda con desván o buhardilla sin aislar puede solicitar el programa. No hay requisitos de ingresos."
+      },
+      {
+        "question": "¿Tengo que hacer algún trámite?",
+        "answer": "No, nuestro equipo se encarga de todos los trámites administrativos y la documentación necesaria."
+      }
+    ]
+  },
+  "notFound": {
+    "title": "Página no encontrada",
+    "subtitle": "Lo sentimos, la página que buscas no existe o ha sido trasladada.",
+    "backHome": "Volver a la página principal"
+  }
+}

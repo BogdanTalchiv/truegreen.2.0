@@ -1,0 +1,47 @@
+// 1. Custom variables (must come before Bootstrap)
+@import 'variables';
+
+// 2. Bootstrap
+@import 'bootstrap/scss/bootstrap';
+
+// 3. Bootstrap Icons
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+
+// 4. Custom styles
+@import 'mixins';
+@import 'typography';
+@import 'buttons';
+@import 'cards';
+@import 'animations';
+@import 'utilities';
+
+// 5. Global base styles
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  font-family: $font-family-sans-serif;
+  color: $tg-text-primary;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+// Navbar scrolled state
+.navbar-scrolled {
+  @include glass-effect;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08) !important;
+}

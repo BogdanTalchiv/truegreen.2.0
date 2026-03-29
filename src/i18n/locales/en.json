@@ -1,0 +1,282 @@
+{
+  "nav": {
+    "home": "Home",
+    "whyUs": "Why Us?",
+    "howItWorks": "How It Works",
+    "solutions": "Solutions",
+    "testimonials": "Testimonials",
+    "contact": "Contact",
+    "checkEligibility": "Check Eligibility",
+    "about": "About Us",
+    "services": "Services",
+    "faq": "FAQ",
+    "blog": "Blog"
+  },
+  "hero": {
+    "title": "Insulate your attic",
+    "titleHighlight": "at no cost",
+    "titleEnd": "thanks to the energy efficiency program",
+    "subtitle": "Over 1,500 homes insulated with certified mineral wool. Up to 30% energy savings. No upfront payment and no paperwork.",
+    "cta": "Am I eligible?",
+    "rating": "4.9",
+    "ratingCount": "+600 reviews",
+    "installations": "+1,500 installations completed",
+    "badges": {
+      "funded": "100% Funded",
+      "noCost": "No Cost",
+      "noBureaucracy": "No Paperwork",
+      "official": "Official Program",
+      "supervised": "Supervised"
+    },
+    "howPossible": "How is this possible?"
+  },
+  "whyUs": {
+    "sectionTitle": "Why choose",
+    "sectionTitleHighlight": "TrueGreen?",
+    "sectionSubtitle": "Official program intermediaries with over 1,500 verified installations. Professional and guaranteed solutions for your home.",
+    "cards": {
+      "experience": {
+        "title": "Proven Experience",
+        "description": "Over 1,500 homes insulated across multiple regions by certified technicians, with verified savings of up to 30% on heating."
+      },
+      "guarantee": {
+        "title": "Official Guarantee",
+        "description": "Company registered in the official program. Each file is verified by an accredited body and supervised."
+      },
+      "team": {
+        "title": "Specialized Team",
+        "description": "Over 100 qualified professionals at your disposal to ensure impeccable service."
+      },
+      "peace": {
+        "title": "Peace of Mind",
+        "description": "No bureaucracy, no income requirements, and no upfront costs. Energy companies fund 100% of the work."
+      }
+    },
+    "officialProgram": "Program regulated and supervised by official bodies"
+  },
+  "howItWorks": {
+    "sectionTag": "Official program",
+    "sectionTitle": "How Does the Program Work?",
+    "sectionSubtitle": "An official mechanism that funds 100% of thermal insulation works. Here's how it works, step by step:",
+    "steps": {
+      "step1": {
+        "title": "TrueGreen installs and advances all costs",
+        "description": "Our team performs the complete insulation installation. TrueGreen advances 100% of costs: materials, labor, and transport. You pay nothing.",
+        "summary": "We install complete insulation. TrueGreen advances all costs."
+      },
+      "step2": {
+        "title": "We handle all documentation",
+        "description": "We prepare the complete technical file: measurements, material certificates, energy savings calculations. You don't need to do any paperwork.",
+        "summary": "We prepare the entire technical file. You do nothing."
+      },
+      "step3": {
+        "title": "Independent verification",
+        "description": "An accredited verification body reviews and validates that the energy savings are real and comply with regulations.",
+        "summary": "An accredited body verifies the energy savings."
+      },
+      "step4": {
+        "title": "Validation and compensation",
+        "description": "The verified file is submitted to the energy company, which purchases the Energy Savings Certificates to fulfill its legal quota.",
+        "summary": "The energy company compensates the costs. The process is supervised."
+      }
+    },
+    "result": "The customer pays nothing. TrueGreen is compensated by the energy company. The company fulfills its legal quota. The entire process is supervised.",
+    "legalLink": "Check the legal framework on the official page →"
+  },
+  "solutions": {
+    "sectionTag": "Benefits",
+    "sectionTitle": "Our Solutions",
+    "sectionSubtitle": "Improve your home's energy efficiency with our innovative solutions from the official program. Enjoy a more comfortable home, reduce energy consumption, and all at no cost!",
+    "mainTitle": "Attic Insulation with Blown Mineral Wool",
+    "mainDescription": "Ideal for uninhabitable spaces. 100% blown system without construction work, with guaranteed energy efficiency.",
+    "beforeAfter": {
+      "before": "Before",
+      "after": "After",
+      "hint": "Slide to compare before and after installation"
+    },
+    "categories": {
+      "savings": {
+        "title": "Savings",
+        "items": [
+          "Up to 45% reduction on energy bills",
+          "No cost with official program",
+          "Increased property value"
+        ]
+      },
+      "comfort": {
+        "title": "Comfort & Safety",
+        "items": [
+          "Year-round thermal comfort",
+          "Certified fireproof material",
+          "Ecological and durable solution"
+        ]
+      },
+      "installation": {
+        "title": "Quick Installation",
+        "items": [
+          "Installation in just a few hours",
+          "No construction or dismantling",
+          "100% clean blown system"
+        ]
+      }
+    },
+    "cta": "Request your free energy study now"
+  },
+  "testimonials": {
+    "sectionTag": "Real testimonials",
+    "sectionTitle": "What Our Clients Say",
+    "sectionSubtitle": "Nothing speaks better about the quality of our work than the experience of those who have already chosen us.",
+    "verifiedTitle": "Verified Google Reviews",
+    "verifiedSubtitle": "Real ratings from homeowners who already enjoy a more efficient home.",
+    "basedOn": "Based on +600 reviews",
+    "viewOnGoogle": "View on Google →",
+    "reviews": [
+      {
+        "name": "Maria P.",
+        "date": "January 2026",
+        "text": "I saw the ad online, filled out the form and within less than a week everything was done. I was impressed by the team's professionalism and efficiency.",
+        "rating": 5
+      },
+      {
+        "name": "Ion D.",
+        "date": "January 2026",
+        "text": "Splendid work. Very polite workers who explained all the steps, very clean and careful. We were surprised by the speed and trust. And it's free!",
+        "rating": 5
+      },
+      {
+        "name": "Alexandru M.",
+        "date": "December 2025",
+        "text": "Thank you TrueGreen for the attic insulation. I was pleasantly surprised they did it for free, an incredible detail!",
+        "rating": 5
+      },
+      {
+        "name": "Elena V.",
+        "date": "November 2025",
+        "text": "Excellent experience from start to finish. The team was punctual, professional, and clean. I highly recommend them!",
+        "rating": 5
+      },
+      {
+        "name": "Gheorghe T.",
+        "date": "October 2025",
+        "text": "I couldn't believe it could be free, but everything was confirmed. Quality work, at no cost to us.",
+        "rating": 5
+      }
+    ]
+  },
+  "contact": {
+    "sectionTitle": "We're Here for You",
+    "sectionSubtitle": "Our team of experts is available through multiple channels to offer you the assistance you need.",
+    "phone": {
+      "label": "Phone",
+      "schedule": "Mon-Fri 9:00-18:00"
+    },
+    "email": {
+      "label": "Email",
+      "response": "Response within 24 hours"
+    },
+    "whatsapp": {
+      "label": "WhatsApp",
+      "subtitle": "Instant messaging"
+    },
+    "address": {
+      "label": "Address"
+    },
+    "ctaTitle": "Want to insulate your home for free?",
+    "ctaSubtitle": "We commit to answering all your questions within 24 hours. Request your free study now.",
+    "ctaButton": "Request free study",
+    "ctaCall": "Call now"
+  },
+  "footer": {
+    "description": "Professional energy efficiency solutions for your home. 100% officially funded program.",
+    "quickLinks": "Quick Links",
+    "contactInfo": "Contact",
+    "followUs": "Follow Us",
+    "copyright": "© 2026 TrueGreen. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms & Conditions"
+  },
+  "common": {
+    "learnMore": "Learn More",
+    "getStarted": "Get Started",
+    "backToHome": "Back to Home",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "retry": "Try again"
+  },
+  "form": {
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email Address",
+    "phone": "Phone",
+    "city": "City",
+    "county": "County",
+    "propertyType": "Property Type",
+    "house": "House",
+    "apartment": "Apartment",
+    "building": "Building",
+    "area": "Area (m²)",
+    "yearBuilt": "Year Built",
+    "hasAttic": "Has attic/loft",
+    "yes": "Yes",
+    "no": "No",
+    "postalCode": "Postal Code",
+    "message": "Message",
+    "consent": "I agree to the processing of personal data according to the",
+    "privacyLink": "Privacy Policy",
+    "submit": "Submit Request",
+    "next": "Next",
+    "previous": "Back",
+    "step": "Step",
+    "of": "of",
+    "propertyInfo": "Property Information",
+    "locationInfo": "Location",
+    "personalInfo": "Personal Details",
+    "success": "Your request has been sent successfully! We will contact you as soon as possible.",
+    "errors": {
+      "required": "This field is required",
+      "email": "Invalid email address",
+      "phone": "Invalid phone number",
+      "minLength": "Minimum {min} characters",
+      "consent": "You must agree to the privacy policy"
+    }
+  },
+  "about": {
+    "title": "About TrueGreen",
+    "subtitle": "Our mission is to make energy efficiency accessible to everyone."
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Complete thermal insulation and energy efficiency solutions."
+  },
+  "faq": {
+    "sectionTitle": "Frequently Asked Questions",
+    "sectionSubtitle": "Answers to the most common questions about our services.",
+    "items": [
+      {
+        "question": "Is it really free?",
+        "answer": "Yes, the official program funds 100% of installation costs. You don't need to pay anything upfront and there are no hidden fees."
+      },
+      {
+        "question": "How long does installation take?",
+        "answer": "Complete installation usually takes between 2 and 4 hours, depending on the attic size."
+      },
+      {
+        "question": "What type of insulation do you use?",
+        "answer": "We use blown mineral wool, a certified, fireproof and ecological material with excellent thermal insulation properties."
+      },
+      {
+        "question": "Who can benefit from the program?",
+        "answer": "Any homeowner with an uninsulated attic or loft can apply. There are no income requirements."
+      },
+      {
+        "question": "Do I need to handle any paperwork?",
+        "answer": "No, our team handles all administrative procedures and necessary documentation."
+      }
+    ]
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "subtitle": "Sorry, the page you're looking for doesn't exist or has been moved.",
+    "backHome": "Back to Home"
+  }
+}

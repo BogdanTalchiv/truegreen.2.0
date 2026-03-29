@@ -1,0 +1,95 @@
+.btn-tg-primary {
+  @include gradient-primary;
+  color: $tg-text-light;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: $border-radius;
+  font-weight: 600;
+  transition: $transition-base;
+  @include focus-ring;
+
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 20px rgba($tg-primary, 0.35);
+    color: $tg-text-light;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+.btn-tg-secondary {
+  background: transparent;
+  color: $tg-primary;
+  border: 2px solid $tg-primary;
+  padding: calc(0.75rem - 2px) calc(2rem - 2px);
+  border-radius: $border-radius;
+  font-weight: 600;
+  transition: $transition-base;
+  @include focus-ring;
+
+  &:hover {
+    background: $tg-primary;
+    color: $tg-text-light;
+    transform: scale(1.02);
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+.btn-tg-cta {
+  @include gradient-primary;
+  color: $tg-text-light;
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: $border-radius;
+  font-weight: 700;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 15px rgba($tg-primary, 0.3);
+  transition: $transition-base;
+  @include focus-ring;
+
+  &:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 25px rgba($tg-primary, 0.4);
+    color: $tg-text-light;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+.btn-tg-ghost {
+  background: transparent;
+  color: $tg-primary;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: $border-radius;
+  font-weight: 600;
+  transition: $transition-base;
+  @include focus-ring;
+
+  &:hover {
+    background: rgba($tg-primary, 0.08);
+  }
+}
+
+.btn-tg-white {
+  background: $tg-bg-white;
+  color: $tg-primary;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: $border-radius;
+  font-weight: 600;
+  transition: $transition-base;
+  @include focus-ring;
+
+  &:hover {
+    background: $tg-bg-light;
+    transform: scale(1.02);
+  }
+}
