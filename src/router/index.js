@@ -22,6 +22,66 @@ const routes = [
         meta: { titleKey: 'nav.home' }
       },
       {
+        path: 'por-que-nosotros',
+        name: 'why-us-es',
+        component: () => import('@/views/WhyUsView.vue'),
+        meta: { titleKey: 'nav.whyUs' }
+      },
+      {
+        path: 'why-us',
+        name: 'why-us-en',
+        component: () => import('@/views/WhyUsView.vue'),
+        meta: { titleKey: 'nav.whyUs' }
+      },
+      {
+        path: 'como-funciona',
+        name: 'how-it-works-es',
+        component: () => import('@/views/HowItWorksView.vue'),
+        meta: { titleKey: 'nav.howItWorks' }
+      },
+      {
+        path: 'how-it-works',
+        name: 'how-it-works-en',
+        component: () => import('@/views/HowItWorksView.vue'),
+        meta: { titleKey: 'nav.howItWorks' }
+      },
+      {
+        path: 'soluciones',
+        name: 'solutions-es',
+        component: () => import('@/views/SolutionsView.vue'),
+        meta: { titleKey: 'nav.solutions' }
+      },
+      {
+        path: 'solutions',
+        name: 'solutions-en',
+        component: () => import('@/views/SolutionsView.vue'),
+        meta: { titleKey: 'nav.solutions' }
+      },
+      {
+        path: 'testimonios',
+        name: 'testimonials-es',
+        component: () => import('@/views/TestimonialsView.vue'),
+        meta: { titleKey: 'nav.testimonials' }
+      },
+      {
+        path: 'testimonials',
+        name: 'testimonials-en',
+        component: () => import('@/views/TestimonialsView.vue'),
+        meta: { titleKey: 'nav.testimonials' }
+      },
+      {
+        path: 'contacto',
+        name: 'contact-es',
+        component: () => import('@/views/ContactView.vue'),
+        meta: { titleKey: 'nav.contact' }
+      },
+      {
+        path: 'contact',
+        name: 'contact-en',
+        component: () => import('@/views/ContactView.vue'),
+        meta: { titleKey: 'nav.contact' }
+      },
+      {
         path: 'sobre-nosotros',
         name: 'about-es',
         component: () => import('@/views/AboutView.vue'),

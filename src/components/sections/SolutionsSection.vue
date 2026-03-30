@@ -58,7 +58,7 @@
       </div>
 
       <div class="text-center" data-aos="fade-up">
-        <TgButton variant="cta" icon="arrow-right" icon-position="end" @click="scrollToContact">
+        <TgButton variant="cta" icon="arrow-right" icon-position="end" @click="goToContact">
           {{ $t('solutions.cta') }}
         </TgButton>
       </div>
@@ -68,13 +68,13 @@
 
 <script setup>
   import { useI18n } from 'vue-i18n'
-  import { useSmoothScroll } from '@/composables/useSmoothScroll'
+  import { useRouter } from 'vue-router'
   import TgSectionHeader from '@/components/ui/TgSectionHeader.vue'
   import TgBeforeAfter from '@/components/ui/TgBeforeAfter.vue'
   import TgButton from '@/components/ui/TgButton.vue'
 
-  const { tm, rt } = useI18n()
-  const { scrollTo } = useSmoothScroll()
+  const { tm, rt, locale } = useI18n()
+  const router = useRouter()
 
   const categories = [
     { key: 'savings', icon: 'bi bi-piggy-bank' },
@@ -90,8 +90,9 @@
     return []
   }
 
-  function scrollToContact() {
-    scrollTo('contact')
+  function goToContact() {
+    const path = locale.value === 'es' ? '/es/contacto' : '/en/contact'
+    router.push(path)
   }
 </script>
 

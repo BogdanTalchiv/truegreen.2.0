@@ -38,6 +38,29 @@
     { code: 'en', flag: '🇬🇧', label: 'English' }
   ]
 
+  const pathMap = {
+    'por-que-nosotros': 'why-us',
+    'why-us': 'por-que-nosotros',
+    'como-funciona': 'how-it-works',
+    'how-it-works': 'como-funciona',
+    'soluciones': 'solutions',
+    'solutions': 'soluciones',
+    'testimonios': 'testimonials',
+    'testimonials': 'testimonios',
+    'contacto': 'contact',
+    'contact': 'contacto',
+    'sobre-nosotros': 'about-us',
+    'about-us': 'sobre-nosotros',
+    'servicios': 'services',
+    'services': 'servicios',
+    'preguntas-frecuentes': 'faq',
+    'faq': 'preguntas-frecuentes',
+    'verificar-elegibilidad': 'check-eligibility',
+    'check-eligibility': 'verificar-elegibilidad',
+    'politica-privacidad': 'privacy-policy',
+    'privacy-policy': 'politica-privacidad'
+  }
+
   const currentFlag = computed(() => languages.find((l) => l.code === locale.value)?.flag || '🇪🇸')
   const currentLabel = computed(
     () => languages.find((l) => l.code === locale.value)?.label || 'Español'
@@ -50,8 +73,13 @@
     localStorage.setItem('tg-lang', code)
     document.documentElement.lang = code
 
-    const currentPath = route.path
-    const newPath = currentPath.replace(/^\/(es|en)/, `/${code}`)
-    router.push(newPath)
+    const segments = route.path.split('/')
+    segments[1] = code
+
+    if (segments[2] && pathMap[segments[2]]) {
+      segments[2] = pathMap[segments[2]]
+    }
+
+    router.push(segments.join('/'))
   }
 </script>

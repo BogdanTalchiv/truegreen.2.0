@@ -32,27 +32,25 @@
 
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav mx-auto gap-1">
-          <li v-for="section in navSections" :key="section.id" class="nav-item">
-            <a
+          <li v-for="item in navItems" :key="item.key" class="nav-item">
+            <router-link
+              :to="getNavRoute(item)"
               class="nav-link nav-link-animated"
-              :class="{ active: uiStore.currentSection === section.id }"
-              :href="`#${section.id}`"
-              @click.prevent="handleNavClick(section.id)"
+              active-class="active"
             >
-              {{ $t(section.key) }}
-            </a>
+              {{ $t(item.key) }}
+            </router-link>
           </li>
         </ul>
 
         <div class="d-flex align-items-center gap-3">
           <LanguageSwitcher />
-          <a
-            :href="`#contact`"
+          <router-link
+            :to="eligibilityRoute"
             class="btn btn-tg-primary btn-sm"
-            @click.prevent="handleNavClick('contact')"
           >
             {{ $t('nav.checkEligibility') }}
-          </a>
+          </router-link>
         </div>
       </div>
     </div>
@@ -62,21 +60,26 @@
 </template>
 
 <script setup>
-  import { onMounted, onUnmounted } from 'vue'
+  import { computed, onMounted, onUnmounted } from 'vue'
+  import { useI18n } from 'vue-i18n'
   import { useUiStore } from '@/stores/ui'
-  import { useSmoothScroll } from '@/composables/useSmoothScroll'
-  import { NAV_SECTIONS } from '@/utils/constants'
+  import { NAV_ITEMS } from '@/utils/constants'
   import LanguageSwitcher from './LanguageSwitcher.vue'
   import MobileMenu from './MobileMenu.vue'
 
+  const { locale } = useI18n()
   const uiStore = useUiStore()
-  const { scrollTo } = useSmoothScroll()
-  const navSections = NAV_SECTIONS
+  const navItems = NAV_ITEMS
 
-  function handleNavClick(id) {
-    scrollTo(id)
-    uiStore.closeMobileMenu()
+  function getNavRoute(item) {
+    if (item.routeName === 'home') return `/${locale.value}`
+    const path = locale.value === 'es' ? item.routeEs : item.routeEn
+    return `/${locale.value}/${path}`
   }
+
+  const eligibilityRoute = computed(() =>
+    locale.value === 'es' ? '/es/verificar-elegibilidad' : '/en/check-eligibility'
+  )
 
   function onScroll() {
     uiStore.setScrollState(window.scrollY > 50)
@@ -149,7 +152,8 @@
     color: $tg-text-primary;
     padding: 0.5rem 0.75rem !important;
 
-    &.active {
+    &.active,
+    &.router-link-exact-active {
       color: $tg-primary;
     }
   }

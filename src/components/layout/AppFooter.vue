@@ -16,14 +16,13 @@
         <div class="col-12 col-md-6 col-lg-3">
           <h6 class="text-white fw-bold mb-3">{{ $t('footer.quickLinks') }}</h6>
           <ul class="list-unstyled">
-            <li v-for="section in navSections" :key="section.id" class="mb-2">
-              <a
-                :href="`#${section.id}`"
+            <li v-for="item in navItems" :key="item.key" class="mb-2">
+              <router-link
+                :to="getNavRoute(item)"
                 class="footer-link text-white-50 small text-decoration-none"
-                @click.prevent="scrollTo(section.id)"
               >
-                {{ $t(section.key) }}
-              </a>
+                {{ $t(item.key) }}
+              </router-link>
             </li>
           </ul>
         </div>
@@ -90,9 +89,8 @@
 <script setup>
   import { computed } from 'vue'
   import { useI18n } from 'vue-i18n'
-  import { useSmoothScroll } from '@/composables/useSmoothScroll'
   import {
-    NAV_SECTIONS,
+    NAV_ITEMS,
     PHONE_NUMBER,
     PHONE_URL,
     EMAIL,
@@ -102,8 +100,13 @@
   } from '@/utils/constants'
 
   const { locale } = useI18n()
-  const { scrollTo } = useSmoothScroll()
-  const navSections = NAV_SECTIONS
+  const navItems = NAV_ITEMS
+
+  function getNavRoute(item) {
+    if (item.routeName === 'home') return `/${locale.value}`
+    const path = locale.value === 'es' ? item.routeEs : item.routeEn
+    return `/${locale.value}/${path}`
+  }
 
   const privacyRoute = computed(() =>
     locale.value === 'es' ? '/es/politica-privacidad' : '/en/privacy-policy'

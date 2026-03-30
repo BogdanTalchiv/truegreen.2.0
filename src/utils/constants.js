@@ -14,13 +14,13 @@ export const SOCIAL_LINKS = {
   youtube: 'https://youtube.com/@truegreen'
 }
 
-export const NAV_SECTIONS = [
-  { id: 'hero', key: 'nav.home' },
-  { id: 'why-us', key: 'nav.whyUs' },
-  { id: 'how-it-works', key: 'nav.howItWorks' },
-  { id: 'solutions', key: 'nav.solutions' },
-  { id: 'testimonials', key: 'nav.testimonials' },
-  { id: 'contact', key: 'nav.contact' }
+export const NAV_ITEMS = [
+  { key: 'nav.home', routeName: 'home' },
+  { key: 'nav.whyUs', routeEs: 'por-que-nosotros', routeEn: 'why-us' },
+  { key: 'nav.howItWorks', routeEs: 'como-funciona', routeEn: 'how-it-works' },
+  { key: 'nav.solutions', routeEs: 'soluciones', routeEn: 'solutions' },
+  { key: 'nav.testimonials', routeEs: 'testimonios', routeEn: 'testimonials' },
+  { key: 'nav.contact', routeEs: 'contacto', routeEn: 'contact' }
 ]
 
 export const PROVINCES = [

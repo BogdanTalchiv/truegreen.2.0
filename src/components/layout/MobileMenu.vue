@@ -14,27 +14,27 @@
 
           <nav class="mobile-menu-nav p-3">
             <ul class="list-unstyled mb-0">
-              <li v-for="section in navSections" :key="section.id" class="mb-1">
-                <a
+              <li v-for="item in navItems" :key="item.key" class="mb-1">
+                <router-link
+                  :to="getNavRoute(item)"
                   class="mobile-nav-link d-block py-2 px-3 rounded"
-                  :class="{ active: uiStore.currentSection === section.id }"
-                  :href="`#${section.id}`"
-                  @click.prevent="handleClick(section.id)"
+                  active-class="active"
+                  @click="close"
                 >
-                  {{ $t(section.key) }}
-                </a>
+                  {{ $t(item.key) }}
+                </router-link>
               </li>
             </ul>
 
             <hr />
 
-            <a
-              href="#contact"
+            <router-link
+              :to="eligibilityRoute"
               class="btn btn-tg-cta w-100"
-              @click.prevent="handleClick('contact')"
+              @click="close"
             >
               {{ $t('nav.checkEligibility') }}
-            </a>
+            </router-link>
           </nav>
         </div>
       </div>
@@ -43,22 +43,27 @@
 </template>
 
 <script setup>
-  import { watch } from 'vue'
+  import { computed, watch } from 'vue'
+  import { useI18n } from 'vue-i18n'
   import { useUiStore } from '@/stores/ui'
-  import { useSmoothScroll } from '@/composables/useSmoothScroll'
-  import { NAV_SECTIONS } from '@/utils/constants'
+  import { NAV_ITEMS } from '@/utils/constants'
 
+  const { locale } = useI18n()
   const uiStore = useUiStore()
-  const { scrollTo } = useSmoothScroll()
-  const navSections = NAV_SECTIONS
+  const navItems = NAV_ITEMS
+
+  function getNavRoute(item) {
+    if (item.routeName === 'home') return `/${locale.value}`
+    const path = locale.value === 'es' ? item.routeEs : item.routeEn
+    return `/${locale.value}/${path}`
+  }
+
+  const eligibilityRoute = computed(() =>
+    locale.value === 'es' ? '/es/verificar-elegibilidad' : '/en/check-eligibility'
+  )
 
   function close() {
     uiStore.closeMobileMenu()
-  }
-
-  function handleClick(id) {
-    close()
-    setTimeout(() => scrollTo(id), 300)
   }
 
   watch(
