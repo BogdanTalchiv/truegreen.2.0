@@ -11,7 +11,7 @@
     <div class="container">
       <router-link :to="`/${$i18n.locale}`" class="navbar-brand d-flex align-items-center gap-2">
         <img
-          src="/images/tge_logo_nobg.png"
+          src="/images/vector.png"
           alt="Truegreen Energy"
           class="navbar-logo"
         />

@@ -5,7 +5,7 @@
         <div class="col-12 col-md-6 col-lg-4">
           <div class="mb-3">
             <img
-              src="/images/tge_logo_nobg.png"
+              src="/images/vector.png"
               alt="Truegreen Energy"
               class="footer-logo"
             />

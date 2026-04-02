@@ -6,7 +6,7 @@
           <div class="mobile-menu-header d-flex justify-content-between align-items-center p-3">
             <div class="d-flex align-items-center gap-2">
               <img
-                src="/images/tge_logo_nobg.png"
+                src="/images/vector.png"
                 alt="Truegreen Energy"
                 style="height: 40px; width: auto; object-fit: contain;"
               />
