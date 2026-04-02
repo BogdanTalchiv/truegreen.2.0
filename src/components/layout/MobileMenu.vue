@@ -4,11 +4,17 @@
       <div v-if="uiStore.isMobileMenuOpen" class="mobile-menu-backdrop" @click="close">
         <div class="mobile-menu-panel" @click.stop>
           <div class="mobile-menu-header d-flex justify-content-between align-items-center p-3">
-            <img
-              src="/images/logo.jpg"
-              alt="True Green Energy"
-              style="height: 60px; width: auto; object-fit: contain; border-radius: 6px;"
-            />
+            <div class="d-flex align-items-center gap-2">
+              <img
+                src="/images/tge_logo_nobg.png"
+                alt="Truegreen Energy"
+                style="height: 40px; width: auto; object-fit: contain;"
+              />
+              <span class="mobile-brand-text">
+                <span class="mobile-brand-top">Truegreen</span>
+                <span class="mobile-brand-bottom">Energy</span>
+              </span>
+            </div>
             <button class="btn-close" @click="close" aria-label="Close"></button>
           </div>
 
@@ -18,7 +24,7 @@
                 <router-link
                   :to="getNavRoute(item)"
                   class="mobile-nav-link d-block py-2 px-3 rounded"
-                  active-class="active"
+                  :class="{ active: isActive(item) }"
                   @click="close"
                 >
                   {{ $t(item.key) }}
@@ -45,10 +51,12 @@
 <script setup>
   import { computed, watch } from 'vue'
   import { useI18n } from 'vue-i18n'
+  import { useRoute } from 'vue-router'
   import { useUiStore } from '@/stores/ui'
   import { NAV_ITEMS } from '@/utils/constants'
 
   const { locale } = useI18n()
+  const route = useRoute()
   const uiStore = useUiStore()
   const navItems = NAV_ITEMS
 
@@ -56,6 +64,15 @@
     if (item.routeName === 'home') return `/${locale.value}`
     const path = locale.value === 'es' ? item.routeEs : item.routeEn
     return `/${locale.value}/${path}`
+  }
+
+  function isActive(item) {
+    const currentPath = route.path
+    if (item.routeName === 'home') {
+      return currentPath === `/${locale.value}` || currentPath === `/${locale.value}/`
+    }
+    const navPath = getNavRoute(item)
+    return currentPath.startsWith(navPath)
   }
 
   const eligibilityRoute = computed(() =>
@@ -92,6 +109,28 @@
     box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
     overflow-y: auto;
     z-index: 1046;
+  }
+
+  .mobile-brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .mobile-brand-top {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: $tg-primary-dark;
+    letter-spacing: 0.02em;
+  }
+
+  .mobile-brand-bottom {
+    font-weight: 400;
+    font-size: 0.65rem;
+    color: $tg-text-secondary;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
   }
 
   .mobile-nav-link {

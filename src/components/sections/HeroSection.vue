@@ -1,9 +1,20 @@
 <template>
   <section id="hero" class="hero-section d-flex align-items-center position-relative">
+    <video
+      class="hero-video"
+      autoplay
+      loop
+      muted
+      playsinline
+      preload="auto"
+    >
+      <source src="/images/hero-video.mp4" type="video/mp4" />
+    </video>
     <div class="hero-overlay"></div>
+
     <div class="container position-relative" style="z-index: 2">
       <div class="row align-items-center">
-        <div class="col-12 col-lg-7 text-center text-lg-start">
+        <div class="col-12 col-lg-8 text-center text-lg-start">
           <h1 class="hero-title mb-3" data-aos="fade-up">
             {{ $t('hero.title') }}
             <span class="text-gradient d-inline-block">{{ $t('hero.titleHighlight') }}</span>
@@ -32,15 +43,20 @@
             </TgButton>
           </div>
 
-          <div class="d-flex flex-wrap gap-2 justify-content-center justify-content-lg-start" data-aos="fade-up" data-aos-delay="400">
-            <span v-for="(label, key) in badges" :key="key" class="tg-badge tg-badge--primary">
-              <i :class="badgeIcons[key]"></i>
-              {{ label }}
-            </span>
+          <!-- Badge Cards -->
+          <div class="hero-badges" data-aos="fade-up" data-aos-delay="400">
+            <div class="badge-grid">
+              <div v-for="badge in badgeItems" :key="badge.key" class="badge-card">
+                <i :class="badge.icon" class="badge-card-icon"></i>
+                <span class="badge-card-text">{{ badge.label }}</span>
+              </div>
+            </div>
+            <button class="hero-how-link" @click="goToContact">
+              {{ $t('hero.howPossible') }}
+              <i class="bi bi-arrow-right ms-1"></i>
+            </button>
           </div>
         </div>
-
-        <div class="col-lg-5 d-none d-lg-block"></div>
       </div>
     </div>
   </section>
@@ -53,18 +69,28 @@
   import TgButton from '@/components/ui/TgButton.vue'
   import TgRating from '@/components/ui/TgRating.vue'
 
-  const { t, locale } = useI18n()
+  const { tm, rt, locale } = useI18n()
   const router = useRouter()
 
-  const badges = computed(() => t('hero.badges', {}, { returnObjects: true }))
-
-  const badgeIcons = {
-    funded: 'bi bi-check-circle',
-    noCost: 'bi bi-cash-stack',
-    noBureaucracy: 'bi bi-file-earmark-check',
-    official: 'bi bi-building-check',
-    supervised: 'bi bi-shield-check'
+  const icons = {
+    funded: 'bi bi-patch-check-fill',
+    noCost: 'bi bi-wallet2',
+    noBureaucracy: 'bi bi-file-earmark-check-fill',
+    official: 'bi bi-bank2',
+    supervised: 'bi bi-shield-fill-check'
   }
+
+  const badgeItems = computed(() => {
+    const msgs = tm('hero.badges')
+    if (typeof msgs === 'object' && msgs !== null) {
+      return Object.entries(msgs).map(([key, msg]) => ({
+        key,
+        label: rt(msg),
+        icon: icons[key] || 'bi bi-check-circle-fill'
+      }))
+    }
+    return []
+  })
 
   function goToContact() {
     const path = locale.value === 'es' ? '/es/contacto' : '/en/contact'
@@ -75,10 +101,10 @@
 <style lang="scss" scoped>
   .hero-section {
     min-height: 100vh;
-    background: url('/images/hero-bg.png') center center / cover no-repeat;
     padding-top: 6rem;
     overflow: hidden;
     position: relative;
+    background: #0a1a0a;
 
     @media (max-width: 991.98px) {
       min-height: auto;
@@ -87,14 +113,23 @@
     }
   }
 
+  .hero-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+
   .hero-overlay {
     position: absolute;
     inset: 0;
     background: linear-gradient(
       135deg,
-      rgba(0, 0, 0, 0.65) 0%,
-      rgba(0, 0, 0, 0.45) 50%,
-      rgba(0, 0, 0, 0.55) 100%
+      rgba(0, 0, 0, 0.7) 0%,
+      rgba(0, 0, 0, 0.5) 50%,
+      rgba(0, 0, 0, 0.6) 100%
     );
     z-index: 1;
   }
@@ -103,20 +138,24 @@
     font-size: 3.25rem;
     line-height: 1.15;
     color: #fff;
-    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
 
     @media (max-width: 991.98px) {
       font-size: 2.25rem;
     }
 
     @media (max-width: 575.98px) {
-      font-size: 1.875rem;
+      font-size: 1.75rem;
     }
   }
 
   .hero-subtitle {
     color: rgba(255, 255, 255, 0.9);
-    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+
+    @media (max-width: 575.98px) {
+      font-size: 0.95rem;
+    }
   }
 
   .hero-text {
@@ -132,10 +171,91 @@
     text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
   }
 
-  :deep(.tg-badge) {
-    background: rgba(255, 255, 255, 0.15) !important;
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    color: #fff !important;
+  // ─── Badge Cards ───
+  .hero-badges {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: flex-start;
+
+    @media (max-width: 991.98px) {
+      align-items: center;
+    }
+  }
+
+  .badge-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: flex-start;
+
+    @media (max-width: 991.98px) {
+      justify-content: center;
+    }
+
+    @media (max-width: 575.98px) {
+      gap: 0.4rem;
+    }
+  }
+
+  .badge-card {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.5rem 0.85rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    transition: all 0.25s ease;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.18);
+      border-color: rgba(255, 255, 255, 0.3);
+      transform: translateY(-1px);
+    }
+
+    @media (max-width: 575.98px) {
+      padding: 0.4rem 0.65rem;
+    }
+  }
+
+  .badge-card-icon {
+    color: #69F0AE;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+  }
+
+  .badge-card-text {
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+
+    @media (max-width: 575.98px) {
+      font-size: 0.72rem;
+    }
+  }
+
+  .hero-how-link {
+    background: none;
+    border: none;
+    color: #69F0AE;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.2s ease;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+
+    &:hover {
+      color: #fff;
+      gap: 0.25rem;
+    }
   }
 </style>

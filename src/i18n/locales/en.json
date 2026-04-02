@@ -9,6 +9,7 @@
     "checkEligibility": "Check Eligibility",
     "about": "About Us",
     "services": "Services",
+    "provinces": "Provinces",
     "faq": "FAQ",
     "blog": "Blog"
   },
@@ -25,8 +26,8 @@
       "funded": "100% Funded",
       "noCost": "No Cost",
       "noBureaucracy": "No Paperwork",
-      "official": "Official Program",
-      "supervised": "Supervised"
+      "official": "Royal Decree 36/2023",
+      "supervised": "Supervised by MITECO"
     },
     "howPossible": "How is this possible?"
   },

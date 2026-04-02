@@ -2,18 +2,18 @@
   <footer class="bg-tg-dark py-5">
     <div class="container">
       <div class="row g-4">
-        <div class="col-12 col-md-6 col-lg-3">
+        <div class="col-12 col-md-6 col-lg-4">
           <div class="mb-3">
             <img
-              src="/images/logo.jpg"
-              alt="True Green Energy"
+              src="/images/tge_logo_nobg.png"
+              alt="Truegreen Energy"
               class="footer-logo"
             />
           </div>
           <p class="text-white-50 small">{{ $t('footer.description') }}</p>
         </div>
 
-        <div class="col-12 col-md-6 col-lg-3">
+        <div class="col-12 col-md-6 col-lg-4">
           <h6 class="text-white fw-bold mb-3">{{ $t('footer.quickLinks') }}</h6>
           <ul class="list-unstyled">
             <li v-for="item in navItems" :key="item.key" class="mb-2">
@@ -27,12 +27,17 @@
           </ul>
         </div>
 
-        <div class="col-12 col-md-6 col-lg-3">
+        <div class="col-12 col-md-6 col-lg-4">
           <h6 class="text-white fw-bold mb-3">{{ $t('footer.contactInfo') }}</h6>
           <ul class="list-unstyled">
             <li class="mb-2">
               <a :href="PHONE_URL" class="footer-link text-white-50 small text-decoration-none">
                 <i class="bi bi-telephone me-2"></i>{{ PHONE_NUMBER }}
+              </a>
+            </li>
+            <li class="mb-2">
+              <a :href="WHATSAPP_URL" target="_blank" rel="noopener" class="footer-link text-white-50 small text-decoration-none">
+                <i class="bi bi-whatsapp me-2"></i>WhatsApp
               </a>
             </li>
             <li class="mb-2">
@@ -46,23 +51,6 @@
               </span>
             </li>
           </ul>
-        </div>
-
-        <div class="col-12 col-md-6 col-lg-3">
-          <h6 class="text-white fw-bold mb-3">{{ $t('footer.followUs') }}</h6>
-          <div class="d-flex gap-2">
-            <a
-              v-for="(url, platform) in SOCIAL_LINKS"
-              :key="platform"
-              :href="url"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="social-icon"
-              :aria-label="platform"
-            >
-              <i :class="`bi bi-${platform}`"></i>
-            </a>
-          </div>
         </div>
       </div>
 
@@ -95,8 +83,8 @@
     PHONE_URL,
     EMAIL,
     EMAIL_URL,
-    ADDRESS,
-    SOCIAL_LINKS
+    WHATSAPP_URL,
+    ADDRESS
   } from '@/utils/constants'
 
   const { locale } = useI18n()
@@ -115,15 +103,12 @@
 
 <style lang="scss" scoped>
   .footer-logo {
-    height: 72px;
+    height: 64px;
     width: auto;
     object-fit: contain;
-    border-radius: 8px;
-    background: white;
-    padding: 6px 10px;
 
     @media (max-width: 575.98px) {
-      height: 60px;
+      height: 52px;
     }
   }
 
@@ -132,25 +117,6 @@
 
     &:hover {
       color: $tg-primary-light !important;
-    }
-  }
-
-  .social-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: rgba(255, 255, 255, 0.6);
-    text-decoration: none;
-    transition: all 0.2s ease;
-
-    &:hover {
-      background: $tg-primary;
-      border-color: $tg-primary;
-      color: white;
     }
   }
 </style>

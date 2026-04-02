@@ -3,52 +3,72 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-12 col-lg-8">
-          <h1 class="mb-4">{{ $t('footer.privacy') }}</h1>
+          <h1 class="mb-4">{{ locale === 'es' ? 'Política de Privacidad' : 'Privacy Policy' }}</h1>
 
-          <div v-if="locale === 'es'">
-            <h3>1. Información General</h3>
-            <p>TrueGreen respeta la confidencialidad de sus datos personales. Esta política describe cómo recopilamos, utilizamos y protegemos su información.</p>
+          <div v-if="locale === 'es'" class="privacy-content">
+            <p class="lead text-muted mb-4">
+              Truegreen Energy respeta la privacidad de los usuarios y se compromete a proteger los datos personales conforme al RGPD y a la legislación española vigente.
+            </p>
 
-            <h3>2. Datos Recopilados</h3>
-            <p>Recopilamos las siguientes categorías de datos: nombre, apellidos, dirección de correo electrónico, número de teléfono, dirección, información sobre la propiedad, datos de navegación (cookies).</p>
+            <h3>1. Responsable del tratamiento</h3>
+            <p>
+              Truegreen Energy<br />
+              Correo electrónico: <a href="mailto:talchivbogdan03@gmail.com">talchivbogdan03@gmail.com</a>
+            </p>
 
-            <h3>3. Finalidad del Tratamiento</h3>
-            <p>Los datos se tratan para: procesar las solicitudes de elegibilidad, contactarle respecto a nuestros servicios, mejorar los servicios ofrecidos, cumplir con las obligaciones legales.</p>
+            <h3>2. Finalidad del tratamiento</h3>
+            <p>Los datos personales recogidos a través de nuestros canales (WhatsApp, correo electrónico, teléfono o formularios web) se utilizan exclusivamente para:</p>
+            <ul>
+              <li>Gestionar solicitudes de información.</li>
+              <li>Seguimiento de expedientes de eficiencia energética (programa CAE).</li>
+              <li>Servicio posventa y atención al cliente.</li>
+              <li>Envío de documentación relacionada con los trabajos realizados.</li>
+            </ul>
+            <p>No realizamos envíos publicitarios ni campañas de marketing automatizadas.</p>
 
-            <h3>4. Sus Derechos</h3>
-            <p>Tiene derecho de acceso, rectificación, supresión, limitación del tratamiento, portabilidad de datos y derecho de oposición al tratamiento. Para ejercer estos derechos, contacte con nosotros en la dirección de correo indicada en el sitio.</p>
+            <h3>3. Conservación y seguridad</h3>
+            <p>Los datos se conservan el tiempo necesario para cumplir obligaciones legales y de servicio. Aplicamos medidas técnicas y organizativas adecuadas para garantizar la seguridad y confidencialidad.</p>
 
-            <h3>5. Cookies</h3>
-            <p>El sitio utiliza cookies esenciales para su funcionamiento, cookies analíticas (Google Analytics) y cookies de marketing. Puede gestionar sus preferencias a través del banner de cookies que se muestra en su primera visita.</p>
+            <h3>4. Derechos de los usuarios</h3>
+            <p>Puede ejercer derechos de acceso, rectificación, supresión, oposición y portabilidad escribiendo a: <a href="mailto:talchivbogdan03@gmail.com">talchivbogdan03@gmail.com</a></p>
 
-            <h3>6. Seguridad de los Datos</h3>
-            <p>Implementamos medidas técnicas y organizativas adecuadas para la protección de sus datos personales.</p>
+            <h3>5. Uso de la API de WhatsApp Business</h3>
+            <p>Esta aplicación utiliza la API oficial de WhatsApp Business únicamente para comunicaciones informativas y de servicio con clientes con relación comercial previa. No se recopilan ni comparten datos con terceros ajenos a la prestación del servicio.</p>
 
-            <h3>7. Contacto</h3>
-            <p>Para preguntas relacionadas con la protección de datos, puede contactarnos en: <a :href="'mailto:' + EMAIL">{{ EMAIL }}</a></p>
+            <p class="text-muted small mt-4"><em>Última actualización: Febrero 2026.</em></p>
           </div>
 
-          <div v-else>
-            <h3>1. General Information</h3>
-            <p>TrueGreen respects the confidentiality of your personal data. This policy describes how we collect, use and protect your information.</p>
+          <div v-else class="privacy-content">
+            <p class="lead text-muted mb-4">
+              Truegreen Energy respects the privacy of its users and is committed to protecting personal data in accordance with the GDPR and current Spanish legislation.
+            </p>
 
-            <h3>2. Data Collected</h3>
-            <p>We collect the following categories of data: first name, last name, email address, phone number, address, property information, browsing data (cookies).</p>
+            <h3>1. Data Controller</h3>
+            <p>
+              Truegreen Energy<br />
+              Email: <a href="mailto:talchivbogdan03@gmail.com">talchivbogdan03@gmail.com</a>
+            </p>
 
-            <h3>3. Purpose of Processing</h3>
-            <p>Data is processed for: processing eligibility requests, contacting you regarding our services, improving services offered, compliance with legal obligations.</p>
+            <h3>2. Purpose of Processing</h3>
+            <p>Personal data collected through our channels (WhatsApp, email, telephone or web forms) is used exclusively for:</p>
+            <ul>
+              <li>Managing information requests.</li>
+              <li>Monitoring energy efficiency files (CAE program).</li>
+              <li>After-sales service and customer support.</li>
+              <li>Sending documentation related to completed work.</li>
+            </ul>
+            <p>We do not carry out advertising mailings or automated marketing campaigns.</p>
 
-            <h3>4. Your Rights</h3>
-            <p>You have the right of access, rectification, erasure, restriction of processing, data portability and the right to object to processing. To exercise these rights, contact us at the email address indicated on the site.</p>
+            <h3>3. Retention and Security</h3>
+            <p>Data is retained for the time necessary to comply with legal and service obligations. We apply appropriate technical and organizational measures to ensure security and confidentiality.</p>
 
-            <h3>5. Cookies</h3>
-            <p>The site uses essential cookies for functionality, analytical cookies (Google Analytics) and marketing cookies. You can manage your preferences through the cookie banner displayed on your first visit.</p>
+            <h3>4. User Rights</h3>
+            <p>You can exercise your rights of access, rectification, erasure, objection and portability by writing to: <a href="mailto:talchivbogdan03@gmail.com">talchivbogdan03@gmail.com</a></p>
 
-            <h3>6. Data Security</h3>
-            <p>We implement appropriate technical and organizational measures to protect your personal data.</p>
+            <h3>5. Use of WhatsApp Business API</h3>
+            <p>This application uses the official WhatsApp Business API solely for informational and service communications with customers with a prior business relationship. No data is collected or shared with third parties outside the provision of the service.</p>
 
-            <h3>7. Contact</h3>
-            <p>For data protection questions, you can contact us at: <a :href="'mailto:' + EMAIL">{{ EMAIL }}</a></p>
+            <p class="text-muted small mt-4"><em>Last updated: February 2026.</em></p>
           </div>
         </div>
       </div>
@@ -58,6 +78,32 @@
 
 <script setup>
   import { useI18n } from 'vue-i18n'
-  import { EMAIL } from '@/utils/constants'
   const { locale } = useI18n()
 </script>
+
+<style lang="scss" scoped>
+  .privacy-content {
+    h3 {
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      font-size: 1.25rem;
+    }
+
+    ul {
+      padding-left: 1.25rem;
+
+      li {
+        margin-bottom: 0.35rem;
+      }
+    }
+
+    a {
+      color: #2E7D32;
+      text-decoration: underline;
+
+      &:hover {
+        color: #1B5E20;
+      }
+    }
+  }
+</style>

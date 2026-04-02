@@ -3,15 +3,22 @@
 
   <nav
     class="navbar navbar-expand-lg fixed-top"
-    :class="{ 'navbar-scrolled': uiStore.isScrolled }"
+    :class="{
+      'navbar-scrolled': uiStore.isScrolled,
+      'navbar-inner': !isHomePage
+    }"
   >
     <div class="container">
-      <router-link :to="`/${$i18n.locale}`" class="navbar-brand">
+      <router-link :to="`/${$i18n.locale}`" class="navbar-brand d-flex align-items-center gap-2">
         <img
-          src="/images/logo.jpg"
-          alt="True Green Energy"
+          src="/images/tge_logo_nobg.png"
+          alt="Truegreen Energy"
           class="navbar-logo"
         />
+        <span class="brand-text">
+          <span class="brand-line brand-line--top">Truegreen</span>
+          <span class="brand-line brand-line--bottom">Energy</span>
+        </span>
       </router-link>
 
       <div class="d-flex align-items-center gap-2 d-lg-none">
@@ -36,7 +43,7 @@
             <router-link
               :to="getNavRoute(item)"
               class="nav-link nav-link-animated"
-              active-class="active"
+              :class="{ active: isActive(item) }"
             >
               {{ $t(item.key) }}
             </router-link>
@@ -62,19 +69,35 @@
 <script setup>
   import { computed, onMounted, onUnmounted } from 'vue'
   import { useI18n } from 'vue-i18n'
+  import { useRoute } from 'vue-router'
   import { useUiStore } from '@/stores/ui'
   import { NAV_ITEMS } from '@/utils/constants'
   import LanguageSwitcher from './LanguageSwitcher.vue'
   import MobileMenu from './MobileMenu.vue'
 
   const { locale } = useI18n()
+  const route = useRoute()
   const uiStore = useUiStore()
   const navItems = NAV_ITEMS
+
+  const isHomePage = computed(() => {
+    const p = route.path
+    return p === `/${locale.value}` || p === `/${locale.value}/`
+  })
 
   function getNavRoute(item) {
     if (item.routeName === 'home') return `/${locale.value}`
     const path = locale.value === 'es' ? item.routeEs : item.routeEn
     return `/${locale.value}/${path}`
+  }
+
+  function isActive(item) {
+    const currentPath = route.path
+    const navPath = getNavRoute(item)
+    if (item.routeName === 'home') {
+      return currentPath === `/${locale.value}` || currentPath === `/${locale.value}/`
+    }
+    return currentPath.startsWith(navPath)
   }
 
   const eligibilityRoute = computed(() =>
@@ -98,36 +121,86 @@
 <style lang="scss" scoped>
   .navbar {
     transition: all 0.3s ease;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
 
     &:not(.navbar-scrolled) {
       background: transparent;
     }
 
     &.navbar-scrolled {
-      padding-top: 0.25rem;
-      padding-bottom: 0.25rem;
+      padding-top: 0.3rem;
+      padding-bottom: 0.3rem;
+      background: rgba(26, 46, 26, 0.95);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  // ─── Inner page (non-home) overrides ───
+  .navbar-inner {
+    .nav-link {
+      color: rgba(0, 0, 0, 0.7) !important;
+
+      &:hover {
+        color: #000 !important;
+      }
+
+      &.active {
+        color: $tg-primary !important;
+      }
+    }
+
+    .brand-text {
+      color: $tg-text-primary;
+      text-shadow: none;
+    }
+
+    .hamburger-animated .bar {
+      background-color: $tg-text-primary !important;
+    }
+
+    &:not(.navbar-scrolled) {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+    }
+
+    &.navbar-scrolled {
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+
+      .nav-link {
+        color: rgba(0, 0, 0, 0.7) !important;
+
+        &:hover {
+          color: #000 !important;
+        }
+
+        &.active {
+          color: $tg-primary !important;
+        }
+      }
+
+      .brand-text {
+        color: $tg-text-primary;
+        text-shadow: none;
+      }
     }
   }
 
   .navbar-logo {
-    height: 70px;
+    height: 48px;
     width: auto;
     object-fit: contain;
-    border-radius: 6px;
     transition: transform 0.2s ease, height 0.3s ease;
 
     @media (max-width: 575.98px) {
-      height: 56px;
+      height: 38px;
     }
 
-    @media (min-width: 576px) and (max-width: 767.98px) {
-      height: 60px;
-    }
-
-    @media (min-width: 768px) and (max-width: 991.98px) {
-      height: 64px;
+    @media (min-width: 576px) and (max-width: 991.98px) {
+      height: 42px;
     }
 
     &:hover {
@@ -136,25 +209,82 @@
   }
 
   .navbar-scrolled .navbar-logo {
-    height: 50px;
+    height: 40px;
 
     @media (max-width: 575.98px) {
-      height: 44px;
+      height: 32px;
     }
 
     @media (min-width: 576px) and (max-width: 991.98px) {
-      height: 48px;
+      height: 36px;
+    }
+  }
+
+  .brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    transition: color 0.3s ease;
+  }
+
+  .brand-line {
+    display: block;
+
+    &--top {
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+
+      @media (max-width: 575.98px) {
+        font-size: 0.8rem;
+      }
+    }
+
+    &--bottom {
+      font-weight: 400;
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.8;
+
+      @media (max-width: 575.98px) {
+        font-size: 0.6rem;
+      }
     }
   }
 
   .nav-link {
     font-weight: 500;
-    color: $tg-text-primary;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.85) !important;
     padding: 0.5rem 0.75rem !important;
+    transition: color 0.2s ease;
+    white-space: nowrap;
 
-    &.active,
-    &.router-link-exact-active {
-      color: $tg-primary;
+    &:hover {
+      color: #fff !important;
     }
+
+    &.active {
+      color: #69F0AE !important;
+      font-weight: 600;
+    }
+  }
+
+  .hamburger-animated .bar {
+    background-color: #fff;
+    transition: background-color 0.3s ease;
+  }
+
+  :deep(.btn-tg-primary) {
+    background: $tg-primary;
+    border-color: $tg-primary;
+    color: #fff;
+    white-space: nowrap;
+    font-size: 0.85rem;
+    padding: 0.4rem 1rem;
   }
 </style>

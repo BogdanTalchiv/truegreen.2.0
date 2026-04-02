@@ -57,6 +57,8 @@
     'faq': 'preguntas-frecuentes',
     'verificar-elegibilidad': 'check-eligibility',
     'check-eligibility': 'verificar-elegibilidad',
+    'provincias': 'provinces',
+    'provinces': 'provincias',
     'politica-privacidad': 'privacy-policy',
     'privacy-policy': 'politica-privacidad'
   }

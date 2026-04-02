@@ -9,6 +9,7 @@
     "checkEligibility": "Verificar elegibilidad",
     "about": "Sobre nosotros",
     "services": "Servicios",
+    "provinces": "Provincias",
     "faq": "Preguntas frecuentes",
     "blog": "Blog"
   },
@@ -22,11 +23,11 @@
     "ratingCount": "+600 opiniones",
     "installations": "+1.500 instalaciones realizadas",
     "badges": {
-      "funded": "100% Subvencionado",
-      "noCost": "Sin Coste",
-      "noBureaucracy": "Sin Burocracia",
-      "official": "Programa Oficial",
-      "supervised": "Supervisado"
+      "funded": "100% financiado",
+      "noCost": "Sin coste",
+      "noBureaucracy": "Sin trámites",
+      "official": "Real Decreto 36/2023",
+      "supervised": "Supervisado MITECO"
     },
     "howPossible": "¿Cómo es posible?"
   },

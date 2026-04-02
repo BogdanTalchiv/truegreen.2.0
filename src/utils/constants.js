@@ -1,24 +1,18 @@
-export const PHONE_NUMBER = import.meta.env.VITE_PHONE_NUMBER || '+34 900 000 000'
-export const EMAIL = import.meta.env.VITE_EMAIL || 'contacto@truegreen.es'
-export const WHATSAPP_NUMBER = import.meta.env.VITE_WHATSAPP_NUMBER || '+34 600 000 000'
-export const ADDRESS = import.meta.env.VITE_ADDRESS || 'Madrid, España'
+export const PHONE_NUMBER = '062115092'
+export const EMAIL = 'talchivbogdan03@gmail.com'
+export const WHATSAPP_NUMBER = '062115092'
+export const ADDRESS = 'Madrid, España 28006'
 
-export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER.replace(/[^0-9]/g, '')}`
+export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER.replace(/[^0-9]/g, '')}?text=${encodeURIComponent('Hola, deseo más información sobre vuestros servicios de eficiencia energética.')}`
 export const PHONE_URL = `tel:${PHONE_NUMBER}`
-export const EMAIL_URL = `mailto:${EMAIL}`
-
-export const SOCIAL_LINKS = {
-  facebook: 'https://facebook.com/truegreen',
-  instagram: 'https://instagram.com/truegreen',
-  linkedin: 'https://linkedin.com/company/truegreen',
-  youtube: 'https://youtube.com/@truegreen'
-}
+export const EMAIL_URL = `mailto:${EMAIL}?subject=${encodeURIComponent('Consulta sobre servicios de eficiencia energética')}`
 
 export const NAV_ITEMS = [
   { key: 'nav.home', routeName: 'home' },
   { key: 'nav.whyUs', routeEs: 'por-que-nosotros', routeEn: 'why-us' },
   { key: 'nav.howItWorks', routeEs: 'como-funciona', routeEn: 'how-it-works' },
   { key: 'nav.solutions', routeEs: 'soluciones', routeEn: 'solutions' },
+  { key: 'nav.provinces', routeEs: 'provincias', routeEn: 'provinces' },
   { key: 'nav.testimonials', routeEs: 'testimonios', routeEn: 'testimonials' },
   { key: 'nav.contact', routeEs: 'contacto', routeEn: 'contact' }
 ]

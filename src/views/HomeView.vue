@@ -98,16 +98,16 @@
           </div>
 
           <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
-            <router-link :to="getRoute('preguntas-frecuentes', 'faq')" class="text-decoration-none">
+            <router-link :to="getRoute('provincias', 'provinces')" class="text-decoration-none">
               <div class="home-card h-100">
                 <div class="home-card-icon">
-                  <i class="bi bi-question-circle"></i>
+                  <i class="bi bi-map"></i>
                 </div>
-                <h3 class="home-card-title">{{ $t('nav.faq') }}</h3>
+                <h3 class="home-card-title">{{ $t('nav.provinces') }}</h3>
                 <p class="home-card-text">
                   {{ locale === 'es'
-                    ? '¿Es realmente gratis? ¿Cuánto dura? Resolvemos todas tus dudas sobre el programa.'
-                    : 'Is it really free? How long does it take? We answer all your questions about the program.'
+                    ? 'Consulta en qué regiones y provincias de España ofrecemos nuestro servicio gratuito.'
+                    : 'Check in which regions and provinces of Spain we offer our free service.'
                   }}
                 </p>
                 <span class="home-card-link">

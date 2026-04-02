@@ -141,6 +141,28 @@ const routes = [
         meta: { titleKey: 'nav.checkEligibility' }
       },
       {
+        path: 'provincias',
+        name: 'provinces-es',
+        component: () => import('@/views/ProvincesView.vue'),
+        meta: { titleKey: 'nav.provinces' }
+      },
+      {
+        path: 'provinces',
+        name: 'provinces-en',
+        component: () => import('@/views/ProvincesView.vue'),
+        meta: { titleKey: 'nav.provinces' }
+      },
+      {
+        path: 'provincias/:slug',
+        name: 'province-detail-es',
+        component: () => import('@/views/ProvinceDetailView.vue')
+      },
+      {
+        path: 'provinces/:slug',
+        name: 'province-detail-en',
+        component: () => import('@/views/ProvinceDetailView.vue')
+      },
+      {
         path: 'politica-privacidad',
         name: 'privacy-es',
         component: () => import('@/views/PrivacyView.vue')
