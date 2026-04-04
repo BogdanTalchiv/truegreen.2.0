@@ -2,143 +2,11 @@
   <div>
     <HeroSection />
 
-    <!-- Services Overview -->
-    <section class="home-services tg-section">
-      <div class="container">
-        <div class="text-center mb-5" data-aos="fade-up">
-          <span class="home-tag">{{ $t('nav.services') }}</span>
-          <h2 class="fw-bold mt-2 mb-3">{{ locale === 'es' ? 'Todo lo que necesitas saber' : 'Everything you need to know' }}</h2>
-          <p class="text-muted col-lg-8 mx-auto">
-            {{ locale === 'es'
-              ? 'Descubre cómo nuestro programa de aislamiento térmico gratuito puede transformar tu hogar. Explora cada sección para más información.'
-              : 'Discover how our free thermal insulation program can transform your home. Explore each section for more information.'
-            }}
-          </p>
-        </div>
-
-        <div class="row g-4">
-          <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
-            <router-link :to="getRoute('por-que-nosotros', 'why-us')" class="text-decoration-none">
-              <div class="home-card h-100">
-                <div class="home-card-icon">
-                  <i class="bi bi-award"></i>
-                </div>
-                <h3 class="home-card-title">{{ $t('nav.whyUs') }}</h3>
-                <p class="home-card-text">
-                  {{ locale === 'es'
-                    ? 'Más de 1.500 instalaciones verificadas, equipo certificado y garantía oficial del programa.'
-                    : 'Over 1,500 verified installations, certified team and official program guarantee.'
-                  }}
-                </p>
-                <span class="home-card-link">
-                  {{ $t('common.learnMore') }} <i class="bi bi-arrow-right ms-1"></i>
-                </span>
-              </div>
-            </router-link>
-          </div>
-
-          <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-            <router-link :to="getRoute('como-funciona', 'how-it-works')" class="text-decoration-none">
-              <div class="home-card h-100">
-                <div class="home-card-icon">
-                  <i class="bi bi-diagram-3"></i>
-                </div>
-                <h3 class="home-card-title">{{ $t('nav.howItWorks') }}</h3>
-                <p class="home-card-text">
-                  {{ locale === 'es'
-                    ? 'Un proceso sencillo en 4 pasos. Nosotros nos encargamos de todo, tú no pagas nada.'
-                    : 'A simple 4-step process. We take care of everything, you pay nothing.'
-                  }}
-                </p>
-                <span class="home-card-link">
-                  {{ $t('common.learnMore') }} <i class="bi bi-arrow-right ms-1"></i>
-                </span>
-              </div>
-            </router-link>
-          </div>
-
-          <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-            <router-link :to="getRoute('soluciones', 'solutions')" class="text-decoration-none">
-              <div class="home-card h-100">
-                <div class="home-card-icon">
-                  <i class="bi bi-house-gear"></i>
-                </div>
-                <h3 class="home-card-title">{{ $t('nav.solutions') }}</h3>
-                <p class="home-card-text">
-                  {{ locale === 'es'
-                    ? 'Aislamiento con lana mineral insuflada. Hasta un 45% de ahorro en tu factura energética.'
-                    : 'Blown mineral wool insulation. Up to 45% savings on your energy bill.'
-                  }}
-                </p>
-                <span class="home-card-link">
-                  {{ $t('common.learnMore') }} <i class="bi bi-arrow-right ms-1"></i>
-                </span>
-              </div>
-            </router-link>
-          </div>
-
-          <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
-            <router-link :to="getRoute('testimonios', 'testimonials')" class="text-decoration-none">
-              <div class="home-card h-100">
-                <div class="home-card-icon">
-                  <i class="bi bi-chat-quote"></i>
-                </div>
-                <h3 class="home-card-title">{{ $t('nav.testimonials') }}</h3>
-                <p class="home-card-text">
-                  {{ locale === 'es'
-                    ? 'Valoración 4.9/5 en Google con más de 600 opiniones verificadas de clientes satisfechos.'
-                    : '4.9/5 Google rating with over 600 verified reviews from satisfied customers.'
-                  }}
-                </p>
-                <span class="home-card-link">
-                  {{ $t('common.learnMore') }} <i class="bi bi-arrow-right ms-1"></i>
-                </span>
-              </div>
-            </router-link>
-          </div>
-
-          <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
-            <router-link :to="getRoute('provincias', 'provinces')" class="text-decoration-none">
-              <div class="home-card h-100">
-                <div class="home-card-icon">
-                  <i class="bi bi-map"></i>
-                </div>
-                <h3 class="home-card-title">{{ $t('nav.provinces') }}</h3>
-                <p class="home-card-text">
-                  {{ locale === 'es'
-                    ? 'Consulta en qué regiones y provincias de España ofrecemos nuestro servicio gratuito.'
-                    : 'Check in which regions and provinces of Spain we offer our free service.'
-                  }}
-                </p>
-                <span class="home-card-link">
-                  {{ $t('common.learnMore') }} <i class="bi bi-arrow-right ms-1"></i>
-                </span>
-              </div>
-            </router-link>
-          </div>
-
-          <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
-            <router-link :to="getRoute('contacto', 'contact')" class="text-decoration-none">
-              <div class="home-card home-card--cta h-100">
-                <div class="home-card-icon home-card-icon--white">
-                  <i class="bi bi-headset"></i>
-                </div>
-                <h3 class="home-card-title text-white">{{ $t('nav.contact') }}</h3>
-                <p class="home-card-text text-white-75">
-                  {{ locale === 'es'
-                    ? 'Contacta con nuestro equipo de expertos. Respuesta garantizada en menos de 24 horas.'
-                    : 'Contact our team of experts. Guaranteed response within 24 hours.'
-                  }}
-                </p>
-                <span class="home-card-link text-white">
-                  {{ locale === 'es' ? 'Contactar ahora' : 'Contact now' }} <i class="bi bi-arrow-right ms-1"></i>
-                </span>
-              </div>
-            </router-link>
-          </div>
-        </div>
-      </div>
-    </section>
+    <WhyUsSection />
+    <HowItWorksSection />
+    <SolutionsSection />
+    <ProvincesCoverageSection embedded />
+    <TestimonialsSection />
 
     <!-- Stats Bar -->
     <section class="home-stats" data-aos="fade-up">
@@ -172,6 +40,155 @@
       </div>
     </section>
 
+    <div class="home-green-spacer" aria-hidden="true"></div>
+
+    <!-- Quick links to dedicated pages -->
+    <section class="home-services tg-section">
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <span class="home-tag">{{ $t('nav.services') }}</span>
+          <h2 class="fw-bold mt-2 mb-3">{{ locale === 'es' ? 'Profundiza en cada tema' : 'Explore each topic in depth' }}</h2>
+          <p class="text-muted col-lg-8 mx-auto">
+            {{
+              locale === 'es'
+                ? 'Accede a las páginas dedicadas para leer con detalle cómo trabajamos, dónde actuamos y qué opinan nuestros clientes.'
+                : 'Visit dedicated pages for full detail on how we work, where we operate, and what our clients say.'
+            }}
+          </p>
+        </div>
+
+        <div class="row home-card-row g-4">
+          <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
+            <router-link :to="getRoute('por-que-nosotros', 'why-us')" class="text-decoration-none">
+              <div class="home-card h-100">
+                <div class="home-card-icon">
+                  <i class="bi bi-award"></i>
+                </div>
+                <h3 class="home-card-title">{{ $t('nav.whyUs') }}</h3>
+                <p class="home-card-text">
+                  {{
+                    locale === 'es'
+                      ? 'Más de 1.500 instalaciones verificadas, equipo certificado y garantía oficial del programa.'
+                      : 'Over 1,500 verified installations, certified team and official program guarantee.'
+                  }}
+                </p>
+                <span class="home-card-link">
+                  {{ $t('common.learnMore') }} <i class="bi bi-arrow-right ms-1"></i>
+                </span>
+              </div>
+            </router-link>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <router-link :to="getRoute('como-funciona', 'how-it-works')" class="text-decoration-none">
+              <div class="home-card h-100">
+                <div class="home-card-icon">
+                  <i class="bi bi-diagram-3"></i>
+                </div>
+                <h3 class="home-card-title">{{ $t('nav.howItWorks') }}</h3>
+                <p class="home-card-text">
+                  {{
+                    locale === 'es'
+                      ? 'Un proceso sencillo en 4 pasos. Nosotros nos encargamos de todo, tú no pagas nada.'
+                      : 'A simple 4-step process. We take care of everything, you pay nothing.'
+                  }}
+                </p>
+                <span class="home-card-link">
+                  {{ $t('common.learnMore') }} <i class="bi bi-arrow-right ms-1"></i>
+                </span>
+              </div>
+            </router-link>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <router-link :to="getRoute('soluciones', 'solutions')" class="text-decoration-none">
+              <div class="home-card h-100">
+                <div class="home-card-icon">
+                  <i class="bi bi-house-gear"></i>
+                </div>
+                <h3 class="home-card-title">{{ $t('nav.solutions') }}</h3>
+                <p class="home-card-text">
+                  {{
+                    locale === 'es'
+                      ? 'Aislamiento con lana mineral insuflada. Hasta un 45% de ahorro en tu factura energética.'
+                      : 'Blown mineral wool insulation. Up to 45% savings on your energy bill.'
+                  }}
+                </p>
+                <span class="home-card-link">
+                  {{ $t('common.learnMore') }} <i class="bi bi-arrow-right ms-1"></i>
+                </span>
+              </div>
+            </router-link>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+            <router-link :to="getRoute('testimonios', 'testimonials')" class="text-decoration-none">
+              <div class="home-card h-100">
+                <div class="home-card-icon">
+                  <i class="bi bi-chat-quote"></i>
+                </div>
+                <h3 class="home-card-title">{{ $t('nav.testimonials') }}</h3>
+                <p class="home-card-text">
+                  {{
+                    locale === 'es'
+                      ? 'Valoración 4.9/5 en Google con más de 600 opiniones verificadas de clientes satisfechos.'
+                      : '4.9/5 Google rating with over 600 verified reviews from satisfied customers.'
+                  }}
+                </p>
+                <span class="home-card-link">
+                  {{ $t('common.learnMore') }} <i class="bi bi-arrow-right ms-1"></i>
+                </span>
+              </div>
+            </router-link>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+            <router-link :to="getRoute('provincias', 'provinces')" class="text-decoration-none">
+              <div class="home-card h-100">
+                <div class="home-card-icon">
+                  <i class="bi bi-map"></i>
+                </div>
+                <h3 class="home-card-title">{{ $t('nav.provinces') }}</h3>
+                <p class="home-card-text">
+                  {{
+                    locale === 'es'
+                      ? 'Consulta en qué regiones y provincias de España ofrecemos nuestro servicio gratuito.'
+                      : 'Check in which regions and provinces of Spain we offer our free service.'
+                  }}
+                </p>
+                <span class="home-card-link">
+                  {{ $t('common.learnMore') }} <i class="bi bi-arrow-right ms-1"></i>
+                </span>
+              </div>
+            </router-link>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
+            <router-link :to="getRoute('contacto', 'contact')" class="text-decoration-none">
+              <div class="home-card home-card--cta h-100">
+                <div class="home-card-icon home-card-icon--white">
+                  <i class="bi bi-headset"></i>
+                </div>
+                <h3 class="home-card-title text-white">{{ $t('nav.contact') }}</h3>
+                <p class="home-card-text text-white-75">
+                  {{
+                    locale === 'es'
+                      ? 'Contacta con nuestro equipo de expertos. Respuesta garantizada en menos de 24 horas.'
+                      : 'Contact our team of experts. Guaranteed response within 24 hours.'
+                  }}
+                </p>
+                <span class="home-card-link text-white">
+                  {{ locale === 'es' ? 'Contactar ahora' : 'Contact now' }} <i class="bi bi-arrow-right ms-1"></i>
+                </span>
+              </div>
+            </router-link>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="home-green-spacer home-green-spacer--before-cta" aria-hidden="true"></div>
+
     <!-- Final CTA -->
     <section class="home-cta tg-section" data-aos="fade-up">
       <div class="container text-center">
@@ -179,9 +196,10 @@
           {{ locale === 'es' ? '¿Listo para aislar tu hogar gratis?' : 'Ready to insulate your home for free?' }}
         </h2>
         <p class="text-white-75 col-lg-8 mx-auto mb-4">
-          {{ locale === 'es'
-            ? 'Solicita tu estudio energético gratuito y descubre cuánto puedes ahorrar. Sin compromiso, sin costes.'
-            : 'Request your free energy study and discover how much you can save. No commitment, no costs.'
+          {{
+            locale === 'es'
+              ? 'Solicita tu estudio energético gratuito y descubre cuánto puedes ahorrar. Sin compromiso, sin costes.'
+              : 'Request your free energy study and discover how much you can save. No commitment, no costs.'
           }}
         </p>
         <div class="d-flex flex-wrap justify-content-center gap-3">
@@ -201,6 +219,11 @@
   import { computed, onMounted } from 'vue'
   import { useI18n } from 'vue-i18n'
   import HeroSection from '@/components/sections/HeroSection.vue'
+  import WhyUsSection from '@/components/sections/WhyUsSection.vue'
+  import HowItWorksSection from '@/components/sections/HowItWorksSection.vue'
+  import SolutionsSection from '@/components/sections/SolutionsSection.vue'
+  import ProvincesCoverageSection from '@/components/sections/ProvincesCoverageSection.vue'
+  import TestimonialsSection from '@/components/sections/TestimonialsSection.vue'
   import AOS from 'aos'
 
   const { locale } = useI18n()
@@ -236,6 +259,14 @@
     letter-spacing: 0.05em;
   }
 
+  .home-card-row {
+    row-gap: 1.75rem;
+
+    @media (min-width: 768px) {
+      row-gap: 2rem;
+    }
+  }
+
   .home-card {
     background: white;
     border: 1px solid #e9ecef;
@@ -252,8 +283,13 @@
     }
 
     &--cta {
-      background: linear-gradient(135deg, #2E7D32, #1B5E20);
+      background: linear-gradient(135deg, #2e7d32, #1b5e20);
       border-color: transparent;
+      margin-top: 0.25rem;
+
+      @media (min-width: 992px) {
+        margin-top: 0;
+      }
 
       &:hover {
         box-shadow: 0 8px 32px rgba(46, 125, 50, 0.3);
@@ -313,10 +349,23 @@
     color: rgba(255, 255, 255, 0.75);
   }
 
-  // ─── Stats Bar ───
+  .home-green-spacer {
+    height: 2.75rem;
+    background: #fff;
+
+    @media (min-width: 768px) {
+      height: 3.25rem;
+    }
+
+    &--before-cta {
+      background: #f8f9fa;
+    }
+  }
+
   .home-stats {
-    background: linear-gradient(135deg, #1B5E20, #2E7D32);
-    padding: 3.5rem 0;
+    background: linear-gradient(135deg, #1b5e20, #2e7d32);
+    padding: 3.5rem 0 3.75rem;
+    margin-bottom: 0;
   }
 
   .home-stat-number {
@@ -337,8 +386,10 @@
     font-weight: 500;
   }
 
-  // ─── Final CTA ───
   .home-cta {
-    background: linear-gradient(135deg, #2E7D32 0%, #1B5E20 50%, #0D3B0F 100%);
+    background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 50%, #0d3b0f 100%);
+    margin-top: 0;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
   }
 </style>

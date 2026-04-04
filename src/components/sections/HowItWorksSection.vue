@@ -33,7 +33,12 @@
       </div>
 
       <div class="text-center mt-4" data-aos="fade-up">
-        <a href="#" class="text-success fw-medium text-decoration-none">
+        <a
+          href="https://www.miteco.gob.es/es/calidad-y-evaluacion-ambiental/planes-y-estrategias/plan-de-ahorro-y-eficiencia-energetica-paee"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-success fw-medium text-decoration-none"
+        >
           <i class="bi bi-box-arrow-up-right me-1"></i>
           {{ $t('howItWorks.legalLink') }}
         </a>

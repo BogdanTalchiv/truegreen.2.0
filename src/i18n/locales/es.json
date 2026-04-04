@@ -187,6 +187,83 @@
     "ctaButton": "Solicitar estudio gratuito",
     "ctaCall": "Llamar ahora"
   },
+  "contactPage": {
+    "qa": {
+      "eyebrow": "Compromiso de calidad",
+      "title": "Estándares profesionales y supervisión oficial",
+      "lead": "En Truegreen Energy aplicamos protocolos rigurosos alineados con el programa de certificados de ahorro energético (CAE), en la línea de las mejores prácticas del sector en España.",
+      "checklist": [
+        "Verificación documental y técnica de cada instalación",
+        "Coordinación con organismo verificador acreditado",
+        "Trazabilidad completa del expediente hasta la compensación",
+        "Materiales certificados y personal cualificado"
+      ],
+      "panel1Title": "Cumplimiento normativo",
+      "panel1Body": "Actuamos conforme al Real Decreto 36/2023 y la normativa de eficiencia energética vigente. Cada intervención queda documentada para su revisión por los organismos competentes.",
+      "panel2Title": "Proceso auditado",
+      "panel2Body": "Desde el estudio inicial hasta el cierre del expediente seguimos un flujo ordenado: mediciones, certificados de producto, cálculo de ahorro y remisión conforme a los requisitos del programa."
+    }
+  },
+  "whyUsPage": {
+    "extra": {
+      "block1": {
+        "title": "Resultados medibles en consumo y confort",
+        "body": "Como en los programas de referencia del sector, priorizamos intervenciones con impacto real en la factura y en el bienestar térmico del hogar. El aislamiento del desván reduce pérdidas por la cubierta y mejora la estabilidad interior durante todo el año."
+      },
+      "block2": {
+        "title": "Acompañamiento sin fricción para el propietario",
+        "body": "Gestionamos la relación con verificadores y compañías energéticas para que usted no tenga que ocuparse de la tramitación. Nuestro equipo le informa en cada fase con claridad y sin letra pequeña sobre el alcance del servicio gratuito."
+      }
+    }
+  },
+  "howItWorksPage": {
+    "extra": {
+      "block1": {
+        "title": "Marco legal y transparencia del CAE",
+        "body": "El mecanismo de certificados de ahorro energético permite financiar actuaciones de eficiencia con cargo a las obligaciones de las empresas del sector energético. Truegreen Energy actúa como agente del programa, con la misma lógica operativa que describen las entidades líderes en la divulgación del RD 36/2023."
+      },
+      "block2": {
+        "title": "Plazos orientativos y seguimiento",
+        "body": "Tras la solicitud, concertamos visita técnica, instalación y cierre documental en un calendario previsible. Le mantendremos informado del estado del expediente hasta la validación, sin coste para su vivienda."
+      }
+    }
+  },
+  "solutionsPage": {
+    "extra": {
+      "block1": {
+        "title": "Confort térmico y eficiencia de la envolvente",
+        "body": "La lana mineral insuflada en el desván crea una barrera continua que limita el flujo de calor en invierno y el calentamiento en verano, alineado con las recomendaciones de eficiencia para viviendas con espacio bajo cubierta no habitable."
+      },
+      "block2": {
+        "title": "Sostenibilidad y seguridad del material",
+        "body": "Trabajamos con soluciones certificadas, respetuosas con el medio ambiente y con propiedades reacción al fuego adecuadas para su uso en edificación. La instalación se realiza de forma limpia, sin derribos ni prolongadas molestias."
+      }
+    }
+  },
+  "provincesPage": {
+    "extra": {
+      "block1": {
+        "title": "Cobertura progresiva y equipos locales",
+        "body": "Desplegamos cuadrillas y técnicos en las provincias indicadas para reducir desplazamientos y cumplir plazos. Si su municipio está dentro de una región activa, puede solicitar estudio sin compromiso para confirmar viabilidad técnica."
+      },
+      "block2": {
+        "title": "Misma calidad en todas las comunidades donde operamos",
+        "body": "Un único protocolo de trabajo —desde la visita hasta la entrega documental— garantiza homogeneidad en Castilla y León, Castilla-La Mancha, Madrid, Galicia, Aragón y el resto de regiones señaladas en el mapa."
+      }
+    }
+  },
+  "testimonialsPage": {
+    "extra": {
+      "block1": {
+        "title": "Confianza respaldada por opiniones verificables",
+        "body": "Fomentamos la transparencia: las valoraciones públicas reflejan experiencias reales tras la instalación. Igual que en portales de referencia del sector, la satisfacción del cliente es un indicador clave de nuestro servicio."
+      },
+      "block2": {
+        "title": "Mejora continua a partir del feedback",
+        "body": "Analizamos comentarios y incidencias para afinar procesos, formación del personal de campo y comunicación con el propietario. Cada proyecto nos ayuda a mantener el estándar que espera quien confía en el programa oficial."
+      }
+    }
+  },
   "footer": {
     "description": "Soluciones profesionales de eficiencia energética para tu hogar. Programa oficial de financiación al 100%.",
     "quickLinks": "Enlaces rápidos",

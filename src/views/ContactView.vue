@@ -1,12 +1,12 @@
 <template>
   <div class="page-wrapper">
-    <ContactSection />
+    <ContactQualityAssurance />
   </div>
 </template>
 
 <script setup>
   import { onMounted } from 'vue'
-  import ContactSection from '@/components/sections/ContactSection.vue'
+  import ContactQualityAssurance from '@/components/sections/ContactQualityAssurance.vue'
   import AOS from 'aos'
 
   onMounted(() => {
@@ -15,5 +15,7 @@
 </script>
 
 <style scoped>
-  .page-wrapper { padding-top: 5rem; }
+  .page-wrapper {
+    padding-top: 5rem;
+  }
 </style>

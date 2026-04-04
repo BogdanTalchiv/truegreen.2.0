@@ -187,6 +187,83 @@
     "ctaButton": "Request free study",
     "ctaCall": "Call now"
   },
+  "contactPage": {
+    "qa": {
+      "eyebrow": "Quality commitment",
+      "title": "Professional standards and official oversight",
+      "lead": "Truegreen Energy applies rigorous protocols aligned with the energy savings certificate (CAE) programme, consistent with leading practice in the Spanish energy-efficiency sector.",
+      "checklist": [
+        "Technical and documentary verification of every installation",
+        "Coordination with an accredited verification body",
+        "Full traceability of the file through to compensation",
+        "Certified materials and qualified installers"
+      ],
+      "panel1Title": "Regulatory compliance",
+      "panel1Body": "We work in accordance with Royal Decree 36/2023 and current energy-efficiency regulations. Each intervention is documented for review by the competent bodies.",
+      "panel2Title": "Audited process",
+      "panel2Body": "From the initial study to file closure we follow a structured flow: measurements, product certificates, savings calculation and submission in line with programme requirements."
+    }
+  },
+  "whyUsPage": {
+    "extra": {
+      "block1": {
+        "title": "Measurable results in consumption and comfort",
+        "body": "Like reference programmes in the sector, we prioritise interventions with a real impact on bills and thermal comfort. Attic insulation reduces roof heat losses and stabilises indoor conditions year-round."
+      },
+      "block2": {
+        "title": "Friction-free support for homeowners",
+        "body": "We manage relations with verifiers and energy companies so you do not have to handle the paperwork. Our team keeps you clearly informed at every stage, with no small print on the scope of the free service."
+      }
+    }
+  },
+  "howItWorksPage": {
+    "extra": {
+      "block1": {
+        "title": "Legal framework and CAE transparency",
+        "body": "The energy savings certificate mechanism funds efficiency measures through energy-sector obligations. Truegreen Energy acts as a programme agent, following the same operational logic described by leading organisations for RD 36/2023."
+      },
+      "block2": {
+        "title": "Indicative timelines and follow-up",
+        "body": "After your request we schedule the technical visit, installation and documentation closure within a predictable calendar. We keep you informed of file status until validation, at no cost to your home."
+      }
+    }
+  },
+  "solutionsPage": {
+    "extra": {
+      "block1": {
+        "title": "Thermal comfort and building envelope performance",
+        "body": "Blown mineral wool in the attic forms a continuous barrier that limits heat flow in winter and overheating in summer, in line with efficiency guidance for homes with uninhabitable roof spaces."
+      },
+      "block2": {
+        "title": "Material sustainability and safety",
+        "body": "We use certified solutions that are environmentally sound and have appropriate reaction-to-fire properties for building use. Installation is clean, without demolition or prolonged disruption."
+      }
+    }
+  },
+  "provincesPage": {
+    "extra": {
+      "block1": {
+        "title": "Progressive coverage and local teams",
+        "body": "We deploy crews and technicians in the provinces listed to reduce travel and meet deadlines. If your municipality is in an active region, you can request a no-obligation study to confirm technical viability."
+      },
+      "block2": {
+        "title": "Consistent quality in every region we serve",
+        "body": "A single working protocol—from survey to documentation—ensures consistency across Castile and León, Castile-La Mancha, Madrid, Galicia, Aragon and the other regions shown on the map."
+      }
+    }
+  },
+  "testimonialsPage": {
+    "extra": {
+      "block1": {
+        "title": "Trust backed by verifiable reviews",
+        "body": "We value transparency: public ratings reflect real experiences after installation. As on leading sector portals, client satisfaction is a key measure of our service."
+      },
+      "block2": {
+        "title": "Continuous improvement from feedback",
+        "body": "We review comments and issues to refine processes, field-team training and homeowner communication. Every project helps us maintain the standard expected from the official programme."
+      }
+    }
+  },
   "footer": {
     "description": "Professional energy efficiency solutions for your home. 100% officially funded program.",
     "quickLinks": "Quick Links",
