@@ -5,7 +5,6 @@
     <WhyUsSection />
     <HowItWorksSection />
     <SolutionsSection />
-    <ProvincesCoverageSection embedded />
     <TestimonialsSection />
 
     <!-- Stats Bar -->
@@ -222,7 +221,7 @@
   import WhyUsSection from '@/components/sections/WhyUsSection.vue'
   import HowItWorksSection from '@/components/sections/HowItWorksSection.vue'
   import SolutionsSection from '@/components/sections/SolutionsSection.vue'
-  import ProvincesCoverageSection from '@/components/sections/ProvincesCoverageSection.vue'
+
   import TestimonialsSection from '@/components/sections/TestimonialsSection.vue'
   import AOS from 'aos'
 

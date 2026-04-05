@@ -133,31 +133,31 @@
     "viewOnGoogle": "View on Google →",
     "reviews": [
       {
-        "name": "Maria P.",
+        "name": "Alejandro García",
         "date": "January 2026",
         "text": "I saw the ad online, filled out the form and within less than a week everything was done. I was impressed by the team's professionalism and efficiency.",
         "rating": 5
       },
       {
-        "name": "Ion D.",
+        "name": "Elena Rodríguez",
         "date": "January 2026",
         "text": "Splendid work. Very polite workers who explained all the steps, very clean and careful. We were surprised by the speed and trust. And it's free!",
         "rating": 5
       },
       {
-        "name": "Alexandru M.",
+        "name": "Javier López",
         "date": "December 2025",
         "text": "Thank you TrueGreen for the attic insulation. I was pleasantly surprised they did it for free, an incredible detail!",
         "rating": 5
       },
       {
-        "name": "Elena V.",
+        "name": "María Sánchez",
         "date": "November 2025",
         "text": "Excellent experience from start to finish. The team was punctual, professional, and clean. I highly recommend them!",
         "rating": 5
       },
       {
-        "name": "Gheorghe T.",
+        "name": "Carlos Martínez",
         "date": "October 2025",
         "text": "I couldn't believe it could be free, but everything was confirmed. Quality work, at no cost to us.",
         "rating": 5
@@ -314,6 +314,7 @@
       "required": "This field is required",
       "email": "Invalid email address",
       "phone": "Invalid phone number",
+      "postal": "Enter a valid 5-digit postal code",
       "minLength": "Minimum {min} characters",
       "consent": "You must agree to the privacy policy"
     }

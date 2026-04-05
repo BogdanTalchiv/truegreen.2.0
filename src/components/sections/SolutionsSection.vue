@@ -10,17 +10,19 @@
       <!-- Before / After Groups -->
       <div class="row g-4 mb-5">
         <div class="col-12 col-lg-4" data-aos="fade-up">
-          <div class="ba-group h-100">
+          <div class="ba-group">
             <h4 class="ba-group-title fw-semibold mb-3">
               <i class="bi bi-house-door me-2 text-success"></i>
               {{ locale === 'es' ? 'Aislamiento de Desván' : 'Attic Insulation' }}
             </h4>
-            <TgBeforeAfter
-              before-image="/images/avant-g.jpg"
-              after-image="/images/apres-g.jpg"
-              :before-label="$t('solutions.beforeAfter.before')"
-              :after-label="$t('solutions.beforeAfter.after')"
-            />
+            <div class="ba-wrap">
+              <TgBeforeAfter
+                before-image="/images/avant-g.jpg"
+                after-image="/images/apres-g.jpg"
+                :before-label="$t('solutions.beforeAfter.before')"
+                :after-label="$t('solutions.beforeAfter.after')"
+              />
+            </div>
             <p class="text-center text-muted small mt-2 mb-0">
               <i class="bi bi-arrows-expand me-1" style="transform: rotate(90deg); display: inline-block"></i>
               {{ $t('solutions.beforeAfter.hint') }}
@@ -29,17 +31,19 @@
         </div>
 
         <div class="col-12 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-          <div class="ba-group h-100">
+          <div class="ba-group">
             <h4 class="ba-group-title fw-semibold mb-3">
               <i class="bi bi-building me-2 text-success"></i>
               {{ locale === 'es' ? 'Aislamiento Interior' : 'Interior Insulation' }}
             </h4>
-            <TgBeforeAfter
-              before-image="/images/avant1-d.jpg"
-              after-image="/images/apres1-d.jpg"
-              :before-label="$t('solutions.beforeAfter.before')"
-              :after-label="$t('solutions.beforeAfter.after')"
-            />
+            <div class="ba-wrap">
+              <TgBeforeAfter
+                before-image="/images/avant1-d.jpg"
+                after-image="/images/apres1-d.jpg"
+                :before-label="$t('solutions.beforeAfter.before')"
+                :after-label="$t('solutions.beforeAfter.after')"
+              />
+            </div>
             <p class="text-center text-muted small mt-2 mb-0">
               <i class="bi bi-arrows-expand me-1" style="transform: rotate(90deg); display: inline-block"></i>
               {{ $t('solutions.beforeAfter.hint') }}
@@ -48,17 +52,19 @@
         </div>
 
         <div class="col-12 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-          <div class="ba-group h-100">
+          <div class="ba-group">
             <h4 class="ba-group-title fw-semibold mb-3">
               <i class="bi bi-thermometer-half me-2 text-success"></i>
               {{ locale === 'es' ? 'Resultado Final' : 'Final Result' }}
             </h4>
-            <TgBeforeAfter
-              before-image="/images/before.jpg"
-              after-image="/images/after.jpg"
-              :before-label="$t('solutions.beforeAfter.before')"
-              :after-label="$t('solutions.beforeAfter.after')"
-            />
+            <div class="ba-wrap">
+              <TgBeforeAfter
+                before-image="/images/before.jpg"
+                after-image="/images/after.jpg"
+                :before-label="$t('solutions.beforeAfter.before')"
+                :after-label="$t('solutions.beforeAfter.after')"
+              />
+            </div>
             <p class="text-center text-muted small mt-2 mb-0">
               <i class="bi bi-arrows-expand me-1" style="transform: rotate(90deg); display: inline-block"></i>
               {{ $t('solutions.beforeAfter.hint') }}
@@ -77,7 +83,7 @@
       <div class="pyramid-layout mb-5">
         <!-- Peak: Quick Installation -->
         <div class="row justify-content-center mb-4" data-aos="fade-up">
-          <div class="col-12 col-sm-10 col-md-7 col-lg-5">
+          <div class="col-12 col-sm-10 col-md-8 col-lg-7 col-xl-6">
             <div class="solution-card solution-card--peak d-flex align-items-start gap-3">
               <div class="solution-icon flex-shrink-0">
                 <i class="bi bi-lightning-charge"></i>
@@ -101,7 +107,7 @@
 
         <!-- Base: Savings + Comfort -->
         <div class="row justify-content-center g-4" data-aos="fade-up" data-aos-delay="100">
-          <div class="col-12 col-sm-6 col-lg-5">
+          <div class="col-12 col-sm-6 col-lg-6 col-xl-5">
             <div class="solution-card d-flex align-items-start gap-3 h-100">
               <div class="solution-icon flex-shrink-0">
                 <i class="bi bi-piggy-bank"></i>
@@ -122,7 +128,7 @@
             </div>
           </div>
 
-          <div class="col-12 col-sm-6 col-lg-5">
+          <div class="col-12 col-sm-6 col-lg-6 col-xl-5">
             <div class="solution-card d-flex align-items-start gap-3 h-100">
               <div class="solution-icon flex-shrink-0">
                 <i class="bi bi-shield-check"></i>
@@ -201,6 +207,19 @@
     max-width: 820px;
     margin-left: auto;
     margin-right: auto;
+
+    @media (min-width: 992px)  { max-width: 1000px; }
+    @media (min-width: 1200px) { max-width: 1120px; }
+  }
+
+  /* On desktop make the slider a touch taller (no width change) */
+  .ba-wrap {
+    /* default – keep the 16/10 ratio from TgBeforeAfter */
+
+    @media (min-width: 992px) {
+      /* Force a 4/3 container so height increases without touching width */
+      :deep(.ba-container) { aspect-ratio: 4 / 3; }
+    }
   }
 
   .solution-card {

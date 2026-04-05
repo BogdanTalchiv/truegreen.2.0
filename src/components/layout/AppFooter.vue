@@ -2,17 +2,24 @@
   <footer class="bg-tg-dark py-5">
     <div class="container">
       <div class="row g-4">
+
+        <!-- Brand -->
         <div class="col-12 col-md-6 col-lg-4">
-          <div class="mb-3">
+          <div class="footer-brand mb-3">
             <img
               src="/images/vector.png"
               alt="Truegreen Energy"
               class="footer-logo"
             />
+            <div class="footer-brand-text">
+              <span class="footer-brand-top">Truegreen</span>
+              <span class="footer-brand-bottom">Energy</span>
+            </div>
           </div>
           <p class="text-white-50 small">{{ $t('footer.description') }}</p>
         </div>
 
+        <!-- Quick Links -->
         <div class="col-12 col-md-6 col-lg-4">
           <h6 class="text-white fw-bold mb-3">{{ $t('footer.quickLinks') }}</h6>
           <ul class="list-unstyled">
@@ -27,6 +34,7 @@
           </ul>
         </div>
 
+        <!-- Contact -->
         <div class="col-12 col-md-6 col-lg-4">
           <h6 class="text-white fw-bold mb-3">{{ $t('footer.contactInfo') }}</h6>
           <ul class="list-unstyled">
@@ -102,21 +110,54 @@
 </script>
 
 <style lang="scss" scoped>
+  .footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+  }
+
   .footer-logo {
-    height: 64px;
+    /* Larger on desktop — was 64 px */
+    height: 80px;
     width: auto;
     object-fit: contain;
+    flex-shrink: 0;
 
-    @media (max-width: 575.98px) {
-      height: 52px;
-    }
+    @media (min-width: 992px)  { height: 92px; }
+    @media (max-width: 575.98px) { height: 60px; }
+  }
+
+  /* Mirrors the navbar hover style: Montserrat, white, stacked */
+  .footer-brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.05;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .footer-brand-top {
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: #fff;
+
+    @media (min-width: 992px) { font-size: 1.2rem; }
+  }
+
+  .footer-brand-bottom {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.88);
+    margin-top: 0.2rem;
+
+    @media (min-width: 992px) { font-size: 0.78rem; }
   }
 
   .footer-link {
     transition: color 0.2s ease;
 
-    &:hover {
-      color: $tg-primary-light !important;
-    }
+    &:hover { color: $tg-primary-light !important; }
   }
 </style>

@@ -133,31 +133,31 @@
     "viewOnGoogle": "Ver en Google →",
     "reviews": [
       {
-        "name": "María P.",
+        "name": "Alejandro García",
         "date": "enero 2026",
         "text": "Vi el anuncio en internet, rellené el formulario y en menos de una semana todo estaba listo. Me sorprendió el profesionalismo y la eficiencia del equipo.",
         "rating": 5
       },
       {
-        "name": "Carlos D.",
+        "name": "Elena Rodríguez",
         "date": "enero 2026",
         "text": "Un trabajo espléndido. Trabajadores muy educados que nos explicaron todos los pasos, muy limpios y cuidadosos. Nos sorprendió la rapidez y la confianza. ¡Y es gratis!",
         "rating": 5
       },
       {
-        "name": "Alejandro M.",
+        "name": "Javier López",
         "date": "diciembre 2025",
         "text": "Gracias TrueGreen por el aislamiento del desván. Me sorprendió gratamente que lo hicieron todo gratis, ¡un detalle increíble!",
         "rating": 5
       },
       {
-        "name": "Elena V.",
+        "name": "María Sánchez",
         "date": "noviembre 2025",
         "text": "Excelente experiencia de principio a fin. El equipo fue puntual, profesional y limpio. ¡Lo recomiendo con confianza!",
         "rating": 5
       },
       {
-        "name": "Jorge T.",
+        "name": "Carlos Martínez",
         "date": "octubre 2025",
         "text": "No podía creer que fuera gratis, pero todo se confirmó. Trabajo de calidad, sin ningún coste para nosotros.",
         "rating": 5
@@ -314,6 +314,7 @@
       "required": "Este campo es obligatorio",
       "email": "La dirección de correo no es válida",
       "phone": "El número de teléfono no es válido",
+      "postal": "Introduce un código postal de 5 dígitos",
       "minLength": "Mínimo {min} caracteres",
       "consent": "Debes aceptar la política de privacidad"
     }

@@ -1,25 +1,35 @@
 <template>
-  <section id="how-it-works" class="tg-section-alt">
-    <div class="container">
-      <TgSectionHeader
-        :tag="$t('howItWorks.sectionTag')"
-        :title="$t('howItWorks.sectionTitle')"
-        :subtitle="$t('howItWorks.sectionSubtitle')"
-      />
+  <!--
+    Full-bleed section: howitworks.jpg is the background; dark gradient overlay
+    keeps every text element readable regardless of image brightness.
+  -->
+  <section id="how-it-works" class="hiw-section">
+    <!-- Background layers -->
+    <div class="hiw-bg" :style="{ backgroundImage: `url('${imgSrc}')` }"></div>
+    <div class="hiw-overlay"></div>
 
+    <div class="container hiw-content">
+      <!-- Header -->
+      <div class="text-center mb-5 hiw-header" data-aos="fade-up">
+        <span class="hiw-tag">{{ $t('howItWorks.sectionTag') }}</span>
+        <h2 class="hiw-title">{{ $t('howItWorks.sectionTitle') }}</h2>
+        <p class="hiw-subtitle">{{ $t('howItWorks.sectionSubtitle') }}</p>
+      </div>
+
+      <!-- Step cards -->
       <div class="row g-4 mb-5">
         <div
           v-for="(step, index) in steps"
           :key="step.key"
-          class="col-12 col-md-6"
+          class="col-12 col-sm-6 col-xl-3"
           data-aos="fade-up"
-          :data-aos-delay="index * 150"
+          :data-aos-delay="index * 120"
         >
-          <div class="tg-step-card">
-            <div class="tg-step-number">{{ index + 1 }}</div>
-            <h3 class="tg-card-title">{{ $t(`howItWorks.steps.${step.key}.title`) }}</h3>
-            <p class="tg-card-text mb-2">{{ $t(`howItWorks.steps.${step.key}.description`) }}</p>
-            <p class="small text-success fw-medium mb-0">
+          <div class="hiw-card h-100">
+            <div class="hiw-number">{{ index + 1 }}</div>
+            <h3 class="hiw-card-title">{{ $t(`howItWorks.steps.${step.key}.title`) }}</h3>
+            <p class="hiw-card-text">{{ $t(`howItWorks.steps.${step.key}.description`) }}</p>
+            <p class="hiw-card-summary mb-0">
               <i class="bi bi-check2 me-1"></i>
               {{ $t(`howItWorks.steps.${step.key}.summary`) }}
             </p>
@@ -27,17 +37,19 @@
         </div>
       </div>
 
-      <div class="tg-result-box" data-aos="fade-up">
-        <i class="bi bi-check-circle me-2"></i>
+      <!-- Result banner -->
+      <div class="hiw-result" data-aos="fade-up">
+        <i class="bi bi-check-circle-fill me-2"></i>
         {{ $t('howItWorks.result') }}
       </div>
 
+      <!-- Legal link -->
       <div class="text-center mt-4" data-aos="fade-up">
         <a
           href="https://www.miteco.gob.es/es/calidad-y-evaluacion-ambiental/planes-y-estrategias/plan-de-ahorro-y-eficiencia-energetica-paee"
           target="_blank"
           rel="noopener noreferrer"
-          class="text-success fw-medium text-decoration-none"
+          class="hiw-legal-link"
         >
           <i class="bi bi-box-arrow-up-right me-1"></i>
           {{ $t('howItWorks.legalLink') }}
@@ -48,7 +60,12 @@
 </template>
 
 <script setup>
-  import TgSectionHeader from '@/components/ui/TgSectionHeader.vue'
+  import { useI18n } from 'vue-i18n'
+
+  const { locale } = useI18n()
+  void locale // referenced for reactivity
+
+  const imgSrc = `${import.meta.env.BASE_URL}images/howitworks.jpg`
 
   const steps = [
     { key: 'step1' },
@@ -57,3 +74,149 @@
     { key: 'step4' }
   ]
 </script>
+
+<style lang="scss" scoped>
+  /* ── Section shell ── */
+  .hiw-section {
+    position: relative;
+    padding: 6rem 0 5rem;
+    isolation: isolate;
+  }
+
+  /* ── Photo background ── */
+  .hiw-bg {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  /* ── Dark gradient overlay — left heavier so text is always legible ── */
+  .hiw-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(
+      135deg,
+      rgba(10, 30, 12, 0.88) 0%,
+      rgba(10, 30, 12, 0.78) 50%,
+      rgba(10, 30, 12, 0.65) 100%
+    );
+  }
+
+  /* ── Content sits above the overlays ── */
+  .hiw-content {
+    position: relative;
+  }
+
+  /* ── Header typography ── */
+  .hiw-header {}
+
+  .hiw-tag {
+    display: inline-block;
+    background: rgba(76, 175, 80, 0.22);
+    border: 1px solid rgba(76, 175, 80, 0.5);
+    color: #a5d6a7;
+    font-weight: 600;
+    font-size: 0.82rem;
+    padding: 0.3rem 1rem;
+    border-radius: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 1rem;
+  }
+
+  .hiw-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .hiw-subtitle {
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.78);
+    max-width: 640px;
+    margin: 0 auto;
+    line-height: 1.65;
+  }
+
+  /* ── Step cards ── */
+  .hiw-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 18px;
+    padding: 1.75rem 1.5rem;
+    transition: background 0.25s ease, transform 0.25s ease;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.13);
+      transform: translateY(-4px);
+    }
+  }
+
+  .hiw-number {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #4caf50, #2e7d32);
+    color: #fff;
+    font-weight: 800;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 14px rgba(46, 125, 50, 0.5);
+  }
+
+  .hiw-card-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 0.6rem;
+  }
+
+  .hiw-card-text {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.72);
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+  }
+
+  .hiw-card-summary {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #a5d6a7;
+  }
+
+  /* ── Result banner ── */
+  .hiw-result {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(76, 175, 80, 0.4);
+    border-radius: 14px;
+    padding: 1.25rem 2rem;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.975rem;
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  /* ── Legal link ── */
+  .hiw-legal-link {
+    color: #a5d6a7;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover { color: #c8e6c9; text-decoration: underline; }
+  }
+</style>
