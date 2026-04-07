@@ -8,7 +8,7 @@ function t(key) {
 
 const MAIL_TO = 'talchivbogdan03@gmail.com'
 
-function buildGmailUrl(f) {
+function buildEmailContent(f) {
   const lang = i18n.global.locale.value || 'es'
   const isEs = lang === 'es'
 
@@ -34,10 +34,10 @@ function buildGmailUrl(f) {
     : `[TrueGreen] Eligibility request - ${name}`
 
   const divider = '-'.repeat(42)
-  const lines = [
+  const bodyLines = [
     isEs
-      ? `Nueva solicitud de elegibilidad recibida desde truegreen.vercel.app`
-      : `New eligibility request from truegreen.vercel.app`,
+      ? 'Nueva solicitud de elegibilidad recibida desde truegreen.vercel.app'
+      : 'New eligibility request from truegreen.vercel.app',
     '',
     divider,
     ...Object.entries(LABELS)
@@ -50,16 +50,50 @@ function buildGmailUrl(f) {
       : 'Please contact the client as soon as possible.'
   ]
 
-  const body = lines.join('\n')
+  const body = bodyLines.join('\r\n')
 
-  // Use Gmail compose URL — opens directly in the browser without needing
-  // a desktop mail client configured
+  return { subject, body, name }
+}
+
+/**
+ * Standard mailto: URL — opens the default mail client on every platform
+ * (Outlook, Apple Mail, Thunderbird, Gmail desktop app, etc.)
+ */
+function buildMailtoUrl(f) {
+  const { subject, body } = buildEmailContent(f)
+  return (
+    `mailto:${MAIL_TO}` +
+    `?subject=${encodeURIComponent(subject)}` +
+    `&body=${encodeURIComponent(body)}`
+  )
+}
+
+/**
+ * Gmail web-compose URL — opens Gmail in the browser tab
+ */
+function buildGmailUrl(f) {
+  const { subject, body } = buildEmailContent(f)
   return (
     'https://mail.google.com/mail/?view=cm&fs=1' +
     `&to=${encodeURIComponent(MAIL_TO)}` +
     `&su=${encodeURIComponent(subject)}` +
     `&body=${encodeURIComponent(body)}`
   )
+}
+
+/**
+ * Most reliable cross-platform way to trigger a mailto: link.
+ * Creates a temporary <a> element and clicks it — avoids popup-blocker
+ * issues that come from window.open().
+ */
+function openMailto(url) {
+  const a = document.createElement('a')
+  a.href = url
+  a.style.display = 'none'
+  document.body.appendChild(a)
+  a.click()
+  // Small delay before removal so mobile browsers can process the click
+  setTimeout(() => document.body.removeChild(a), 300)
 }
 
 export const useFormStore = defineStore('form', {
@@ -81,6 +115,7 @@ export const useFormStore = defineStore('form', {
     },
     lastSubmission: null,
     lastMailto: null,
+    lastGmailUrl: null,
     currentStep: 1,
     totalSteps: 3,
     isSubmitting: false,
@@ -178,10 +213,13 @@ export const useFormStore = defineStore('form', {
       this.submitError = null
       this.validationErrors = {}
 
-      // Build the Gmail compose URL and open it in a new tab
-      const mailto = buildGmailUrl(this.eligibilityForm)
-      this.lastMailto = mailto
-      window.open(mailto, '_blank')
+      // Build both URLs and store them
+      this.lastMailto     = buildMailtoUrl(this.eligibilityForm)  // universal
+      this.lastGmailUrl   = buildGmailUrl(this.eligibilityForm)   // Gmail web
+
+      // Open with the default mail client (Outlook, Apple Mail, etc.)
+      // Falls back to Gmail if the user has it configured as default
+      openMailto(this.lastMailto)
 
       // Mark as submitted so the success screen is shown
       this.lastSubmission = { ...this.eligibilityForm }
@@ -207,6 +245,7 @@ export const useFormStore = defineStore('form', {
       }
       this.lastSubmission = null
       this.lastMailto = null
+      this.lastGmailUrl = null
       this.currentStep = 1
       this.isSubmitted = false
       this.submitError = null

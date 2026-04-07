@@ -41,16 +41,16 @@
               }}
             </p>
 
-            <!-- Visual hint -->
+            <!-- Visual step hint -->
             <div class="mailto-hint">
               <div class="mailto-hint-step">
                 <span class="mailto-hint-num">1</span>
-                <span>{{ locale === 'es' ? 'Se ha abierto Gmail / tu correo' : 'Gmail / your mail app opened' }}</span>
+                <span>{{ locale === 'es' ? 'Abre tu correo' : 'Your mail app opens' }}</span>
               </div>
               <div class="mailto-hint-arrow"><i class="bi bi-arrow-right"></i></div>
               <div class="mailto-hint-step">
                 <span class="mailto-hint-num">2</span>
-                <span>{{ locale === 'es' ? 'El mensaje ya está escrito' : 'The message is already written' }}</span>
+                <span>{{ locale === 'es' ? 'Mensaje ya escrito' : 'Message is ready' }}</span>
               </div>
               <div class="mailto-hint-arrow"><i class="bi bi-arrow-right"></i></div>
               <div class="mailto-hint-step mailto-hint-step--final">
@@ -59,13 +59,36 @@
               </div>
             </div>
 
-            <!-- Re-open link in case the tab didn't open -->
-            <p class="reopen-tip text-muted small mt-3">
-              {{ locale === 'es' ? '¿No se abrió el correo?' : "Didn't it open?" }}
-              <a href="#" class="text-success fw-semibold ms-1" @click.prevent="reopenMailto">
-                {{ locale === 'es' ? 'Haz clic aquí' : 'Click here' }}
-              </a>
-            </p>
+            <!-- Mail client selector -->
+            <div class="mail-clients mt-3">
+              <p class="mail-clients-label">
+                {{ locale === 'es' ? 'Elige tu aplicación de correo:' : 'Choose your mail app:' }}
+              </p>
+              <div class="mail-clients-row">
+                <!-- Default client (Outlook, Apple Mail, etc.) -->
+                <a
+                  :href="formStore.lastMailto"
+                  class="mail-btn mail-btn--default"
+                  @click.prevent="reopenMailto"
+                >
+                  <i class="bi bi-envelope-fill"></i>
+                  <span>{{ locale === 'es' ? 'Abrir con app predeterminada' : 'Open with default app' }}</span>
+                  <small>Outlook · Apple Mail · otros</small>
+                </a>
+
+                <!-- Gmail web -->
+                <a
+                  :href="formStore.lastGmailUrl"
+                  target="_blank"
+                  rel="noopener"
+                  class="mail-btn mail-btn--gmail"
+                >
+                  <i class="bi bi-google"></i>
+                  <span>Abrir con Gmail</span>
+                  <small>gmail.com</small>
+                </a>
+              </div>
+            </div>
 
             <!-- Summary table -->
             <div class="summary-card mt-4">
@@ -287,8 +310,8 @@
                   class="btn btn-tg-cta btn-submit"
                   @click="formStore.submitForm()"
                 >
-                  <i class="bi bi-envelope-arrow-up me-2"></i>
-                  {{ locale === 'es' ? 'Abrir correo y enviar' : 'Open mail & send' }}
+                  <i class="bi bi-send me-2"></i>
+                  {{ locale === 'es' ? 'Finalizar y enviar solicitud' : 'Finish & send request' }}
                 </button>
               </div>
             </div>
@@ -341,7 +364,14 @@
   )
 
   function reopenMailto() {
-    if (formStore.lastMailto) window.open(formStore.lastMailto, '_blank')
+    if (!formStore.lastMailto) return
+    // Use anchor-click trick — avoids popup blockers and works on all platforms
+    const a = document.createElement('a')
+    a.href = formStore.lastMailto
+    a.style.display = 'none'
+    document.body.appendChild(a)
+    a.click()
+    setTimeout(() => document.body.removeChild(a), 300)
   }
 
   /* Summary table rows */
@@ -669,7 +699,90 @@
     font-size: 0.8rem;
   }
 
-  .reopen-tip { font-size: 0.82rem; }
+  /* ── Mail client selector ── */
+  .mail-clients {
+    width: 100%;
+  }
+
+  .mail-clients-label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #6c757d;
+    margin-bottom: 0.6rem;
+  }
+
+  .mail-clients-row {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .mail-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+    padding: 0.85rem 1.25rem;
+    border-radius: 14px;
+    text-decoration: none;
+    cursor: pointer;
+    flex: 1;
+    min-width: 140px;
+    max-width: 200px;
+    border: 2px solid transparent;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    will-change: transform;
+    transform: translateZ(0);
+
+    i {
+      font-size: 1.5rem;
+      margin-bottom: 0.15rem;
+    }
+
+    span {
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-align: center;
+      line-height: 1.3;
+    }
+
+    small {
+      font-size: 0.7rem;
+      opacity: 0.7;
+      text-align: center;
+    }
+
+    &:hover {
+      transform: translate3d(0, -2px, 0);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    }
+
+    &--default {
+      background: #f1f8f2;
+      border-color: #c8e6c9;
+      color: #1b5e20;
+
+      &:hover { border-color: #4caf50; }
+    }
+
+    &--gmail {
+      background: #fff5f5;
+      border-color: #ffcdd2;
+      color: #c62828;
+
+      &:hover { border-color: #ef9a9a; }
+
+      i { color: #ea4335; }
+    }
+  }
+
+  @media (max-width: 400px) {
+    .mail-clients-row { flex-direction: column; align-items: stretch; }
+    .mail-btn { max-width: 100%; flex-direction: row; padding: 0.75rem 1rem; gap: 0.75rem;
+      i { font-size: 1.25rem; margin-bottom: 0; }
+    }
+  }
 
   /* ── Summary card ── */
   .summary-card {
