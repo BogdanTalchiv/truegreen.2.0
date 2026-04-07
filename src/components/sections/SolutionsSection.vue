@@ -228,11 +228,13 @@
     border-radius: 14px;
     padding: 1.5rem;
     transition: all 0.25s ease;
+    will-change: transform;
+    transform: translateZ(0);
 
     &:hover {
       border-color: #4CAF50;
       box-shadow: 0 6px 24px rgba(46, 125, 50, 0.1);
-      transform: translateY(-2px);
+      transform: translate3d(0, -2px, 0);
     }
 
     &--peak {

@@ -274,6 +274,8 @@
     transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
+    will-change: transform;
+    transform: translateZ(0);
 
     @media (min-width: 768px) {
       padding: 2rem;
@@ -282,7 +284,7 @@
     &:hover {
       border-color: $tg-primary;
       box-shadow: 0 8px 32px rgba(46, 125, 50, 0.1);
-      transform: translateY(-4px);
+      transform: translate3d(0, -4px, 0);
     }
 
     &--cta {

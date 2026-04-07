@@ -33,9 +33,11 @@
 // Card hover effect
 @mixin card-hover {
   transition: $transition-base;
+  will-change: transform;
+  transform: translateZ(0);
 
   &:hover {
-    transform: translateY(-4px);
+    transform: translate3d(0, -4px, 0);
     box-shadow: $box-shadow-lg;
     border-color: $tg-primary-light;
   }

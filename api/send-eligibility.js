@@ -100,7 +100,7 @@ export default async function handler(req, res) {
     .map(([key, label]) => [label, String(body[key])])
 
   const senderName = [body.firstName, body.lastName].filter(Boolean).join(' ') || 'Usuario'
-  const mailTo     = process.env.MAIL_TO   || 'talchivbogdan03@gmail.com'
+  const mailTo     = process.env.MAIL_TO   || 'truegreenenergysl@gmail.com'
   const mailFrom   = process.env.MAIL_FROM || smtpUser
 
   /* ── Nodemailer transporter (Gmail via TLS on port 587) ── */

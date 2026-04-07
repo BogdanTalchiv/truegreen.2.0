@@ -526,6 +526,11 @@
     font-weight: 600;
     color: #9aaba0;
     white-space: nowrap;
+    text-align: center;
+
+    @media (max-width: 360px) {
+      display: none;
+    }
 
     .step-dot--active & { color: $tg-primary; }
     .step-dot--done &   { color: $tg-text-primary; }

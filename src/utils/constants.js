@@ -1,10 +1,10 @@
-export const PHONE_NUMBER = '062115092'
-export const EMAIL = 'talchivbogdan03@gmail.com'
-export const WHATSAPP_NUMBER = '062115092'
+export const PHONE_NUMBER = '+34 614 49 50 03'
+export const EMAIL = 'truegreenenergysl@gmail.com'
+export const WHATSAPP_NUMBER = '+34614495003'
 export const ADDRESS = 'Madrid, España 28006'
 
 export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER.replace(/[^0-9]/g, '')}?text=${encodeURIComponent('Hola, deseo más información sobre vuestros servicios de eficiencia energética.')}`
-export const PHONE_URL = `tel:${PHONE_NUMBER}`
+export const PHONE_URL = `tel:${WHATSAPP_NUMBER.replace(/[^0-9+]/g, '')}`
 export const EMAIL_URL = `mailto:${EMAIL}?subject=${encodeURIComponent('Consulta sobre servicios de eficiencia energética')}`
 
 export const NAV_ITEMS = [

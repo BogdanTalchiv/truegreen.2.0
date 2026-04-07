@@ -227,11 +227,19 @@
   /* ── Hero band ── */
   .prov-hero {
     position: relative;
-    padding: 8rem 0 5rem;
+    padding: 5rem 0 3.5rem;
     overflow: hidden;
     text-align: center;
     color: #fff;
     isolation: isolate;
+
+    @media (min-width: 768px) {
+      padding: 7rem 0 4.5rem;
+    }
+
+    @media (min-width: 992px) {
+      padding: 8rem 0 5rem;
+    }
   }
 
   .prov-hero-bg {
@@ -351,11 +359,13 @@
     gap: 1.25rem;
     transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
     box-shadow: 0 2px 12px rgba(46, 125, 50, 0.06);
+    will-change: transform;
+    transform: translateZ(0);
 
     &:hover {
       border-color: #a5d6a7;
       box-shadow: 0 8px 32px rgba(46, 125, 50, 0.14);
-      transform: translateY(-3px);
+      transform: translate3d(0, -3px, 0);
     }
   }
 

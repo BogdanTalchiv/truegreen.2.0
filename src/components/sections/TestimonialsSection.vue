@@ -77,7 +77,6 @@
   import { computed } from 'vue'
   import { useI18n } from 'vue-i18n'
   import { getInitials } from '@/utils/helpers'
-  import TgSectionHeader from '@/components/ui/TgSectionHeader.vue'
   import TgRating from '@/components/ui/TgRating.vue'
 
   const { tm, rt } = useI18n()

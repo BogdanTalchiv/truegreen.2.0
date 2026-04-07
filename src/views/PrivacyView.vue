@@ -13,7 +13,7 @@
             <h3>1. Responsable del tratamiento</h3>
             <p>
               Truegreen Energy<br />
-              Correo electrónico: <a href="mailto:talchivbogdan03@gmail.com">talchivbogdan03@gmail.com</a>
+              Correo electrónico: <a href="mailto:truegreenenergysl@gmail.com">truegreenenergysl@gmail.com</a>
             </p>
 
             <h3>2. Finalidad del tratamiento</h3>
@@ -30,7 +30,7 @@
             <p>Los datos se conservan el tiempo necesario para cumplir obligaciones legales y de servicio. Aplicamos medidas técnicas y organizativas adecuadas para garantizar la seguridad y confidencialidad.</p>
 
             <h3>4. Derechos de los usuarios</h3>
-            <p>Puede ejercer derechos de acceso, rectificación, supresión, oposición y portabilidad escribiendo a: <a href="mailto:talchivbogdan03@gmail.com">talchivbogdan03@gmail.com</a></p>
+            <p>Puede ejercer derechos de acceso, rectificación, supresión, oposición y portabilidad escribiendo a: <a href="mailto:truegreenenergysl@gmail.com">truegreenenergysl@gmail.com</a></p>
 
             <h3>5. Uso de la API de WhatsApp Business</h3>
             <p>Esta aplicación utiliza la API oficial de WhatsApp Business únicamente para comunicaciones informativas y de servicio con clientes con relación comercial previa. No se recopilan ni comparten datos con terceros ajenos a la prestación del servicio.</p>
@@ -46,7 +46,7 @@
             <h3>1. Data Controller</h3>
             <p>
               Truegreen Energy<br />
-              Email: <a href="mailto:talchivbogdan03@gmail.com">talchivbogdan03@gmail.com</a>
+              Email: <a href="mailto:truegreenenergysl@gmail.com">truegreenenergysl@gmail.com</a>
             </p>
 
             <h3>2. Purpose of Processing</h3>
@@ -63,7 +63,7 @@
             <p>Data is retained for the time necessary to comply with legal and service obligations. We apply appropriate technical and organizational measures to ensure security and confidentiality.</p>
 
             <h3>4. User Rights</h3>
-            <p>You can exercise your rights of access, rectification, erasure, objection and portability by writing to: <a href="mailto:talchivbogdan03@gmail.com">talchivbogdan03@gmail.com</a></p>
+            <p>You can exercise your rights of access, rectification, erasure, objection and portability by writing to: <a href="mailto:truegreenenergysl@gmail.com">truegreenenergysl@gmail.com</a></p>
 
             <h3>5. Use of WhatsApp Business API</h3>
             <p>This application uses the official WhatsApp Business API solely for informational and service communications with customers with a prior business relationship. No data is collected or shared with third parties outside the provision of the service.</p>

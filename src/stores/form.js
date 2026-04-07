@@ -6,7 +6,7 @@ function t(key) {
   return i18n.global.t(key)
 }
 
-const MAIL_TO = 'talchivbogdan03@gmail.com'
+const MAIL_TO = 'truegreenenergysl@gmail.com'
 
 function buildEmailContent(f) {
   const lang = i18n.global.locale.value || 'es'
