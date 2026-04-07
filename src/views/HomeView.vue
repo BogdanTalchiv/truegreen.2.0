@@ -270,10 +270,14 @@
     background: white;
     border: 1px solid #e9ecef;
     border-radius: 16px;
-    padding: 2rem;
+    padding: 1.5rem;
     transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
+
+    @media (min-width: 768px) {
+      padding: 2rem;
+    }
 
     &:hover {
       border-color: $tg-primary;
@@ -368,15 +372,11 @@
   }
 
   .home-stat-number {
-    font-size: 2.5rem;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
     font-weight: 800;
     color: white;
     line-height: 1;
     margin-bottom: 0.5rem;
-
-    @media (max-width: 575.98px) {
-      font-size: 2rem;
-    }
   }
 
   .home-stat-label {

@@ -1,9 +1,65 @@
 import { defineStore } from 'pinia'
-import api from '@/utils/api'
 import i18n from '@/i18n'
+import { saveFormDraft, loadFormDraft, clearFormDraft } from '@/utils/cacheService'
 
 function t(key) {
   return i18n.global.t(key)
+}
+
+const MAIL_TO = 'talchivbogdan03@gmail.com'
+
+function buildGmailUrl(f) {
+  const lang = i18n.global.locale.value || 'es'
+  const isEs = lang === 'es'
+
+  const LABELS = {
+    propertyType : isEs ? 'Tipo de propiedad'       : 'Property type',
+    area         : isEs ? 'Superficie (m2)'         : 'Area (m2)',
+    yearBuilt    : isEs ? 'Año de construccion'     : 'Year built',
+    hasAttic     : isEs ? 'Tiene desvan/buhardilla' : 'Has attic',
+    county       : isEs ? 'Provincia'               : 'Province',
+    city         : isEs ? 'Ciudad'                  : 'City',
+    postalCode   : isEs ? 'Codigo postal'           : 'Postal code',
+    firstName    : isEs ? 'Nombre'                  : 'First name',
+    lastName     : isEs ? 'Apellidos'               : 'Last name',
+    phone        : isEs ? 'Telefono'                : 'Phone',
+    email        : isEs ? 'Correo electronico'      : 'Email',
+    message      : isEs ? 'Mensaje adicional'       : 'Additional message'
+  }
+
+  const name = [f.firstName, f.lastName].filter(Boolean).join(' ') || 'Cliente'
+
+  const subject = isEs
+    ? `[TrueGreen] Solicitud de elegibilidad - ${name}`
+    : `[TrueGreen] Eligibility request - ${name}`
+
+  const divider = '-'.repeat(42)
+  const lines = [
+    isEs
+      ? `Nueva solicitud de elegibilidad recibida desde truegreen.vercel.app`
+      : `New eligibility request from truegreen.vercel.app`,
+    '',
+    divider,
+    ...Object.entries(LABELS)
+      .filter(([key]) => f[key] != null && f[key] !== '' && f[key] !== false)
+      .map(([key, label]) => `${label}: ${f[key]}`),
+    divider,
+    '',
+    isEs
+      ? 'Por favor, contacta al cliente lo antes posible.'
+      : 'Please contact the client as soon as possible.'
+  ]
+
+  const body = lines.join('\n')
+
+  // Use Gmail compose URL — opens directly in the browser without needing
+  // a desktop mail client configured
+  return (
+    'https://mail.google.com/mail/?view=cm&fs=1' +
+    `&to=${encodeURIComponent(MAIL_TO)}` +
+    `&su=${encodeURIComponent(subject)}` +
+    `&body=${encodeURIComponent(body)}`
+  )
 }
 
 export const useFormStore = defineStore('form', {
@@ -24,6 +80,7 @@ export const useFormStore = defineStore('form', {
       consent: false
     },
     lastSubmission: null,
+    lastMailto: null,
     currentStep: 1,
     totalSteps: 3,
     isSubmitting: false,
@@ -35,6 +92,17 @@ export const useFormStore = defineStore('form', {
   actions: {
     updateField(field, value) {
       this.eligibilityForm[field] = value
+      // Auto-save draft to localStorage when user has accepted cookies
+      saveFormDraft({ ...this.eligibilityForm })
+    },
+
+    loadDraftIfAvailable() {
+      const draft = loadFormDraft()
+      if (draft) {
+        Object.keys(this.eligibilityForm).forEach((key) => {
+          if (draft[key] !== undefined) this.eligibilityForm[key] = draft[key]
+        })
+      }
     },
 
     _validate(step) {
@@ -67,7 +135,7 @@ export const useFormStore = defineStore('form', {
         } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.email.trim())) {
           errs.email = t('form.errors.email')
         }
-        if (!String(f.message || '').trim()) errs.message = req
+        // message is optional — no validation required
         if (!f.consent) errs.consent = t('form.errors.consent')
       }
 
@@ -96,8 +164,8 @@ export const useFormStore = defineStore('form', {
       }
     },
 
-    async submitForm() {
-      /* Validate all steps before submitting */
+    submitForm() {
+      /* Validate all steps before opening mail client */
       for (let s = 1; s <= this.totalSteps; s++) {
         const errs = this._validate(s)
         if (Object.keys(errs).length > 0) {
@@ -107,19 +175,18 @@ export const useFormStore = defineStore('form', {
         }
       }
 
-      this.isSubmitting = true
       this.submitError = null
       this.validationErrors = {}
 
-      try {
-        await api.post('/send-eligibility', { ...this.eligibilityForm })
-        this.lastSubmission = { ...this.eligibilityForm }
-        this.isSubmitted = true
-      } catch (error) {
-        this.submitError = error.message || 'An error occurred'
-      } finally {
-        this.isSubmitting = false
-      }
+      // Build the Gmail compose URL and open it in a new tab
+      const mailto = buildGmailUrl(this.eligibilityForm)
+      this.lastMailto = mailto
+      window.open(mailto, '_blank')
+
+      // Mark as submitted so the success screen is shown
+      this.lastSubmission = { ...this.eligibilityForm }
+      this.isSubmitted = true
+      clearFormDraft()
     },
 
     resetForm() {
@@ -139,10 +206,12 @@ export const useFormStore = defineStore('form', {
         consent: false
       }
       this.lastSubmission = null
+      this.lastMailto = null
       this.currentStep = 1
       this.isSubmitted = false
       this.submitError = null
       this.validationErrors = {}
+      clearFormDraft()
     }
   }
 })

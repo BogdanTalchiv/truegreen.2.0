@@ -19,5 +19,19 @@ export default defineConfig({
         silenceDeprecations: ['legacy-js-api', 'import', 'global-builtin', 'color-functions', 'if-function']
       }
     }
+  },
+  server: {
+    proxy: {
+      // Proxy /api/* to the Vercel dev CLI when running locally.
+      // If `vercel dev` is not running, the form still works:
+      // the store catches the error and shows a dev-mode success message.
+      '/api': {
+        target: 'http://localhost:3000',
+        changeOrigin: true,
+        configure: (proxy) => {
+          proxy.on('error', () => { /* silently ignore – handled in form.js */ })
+        }
+      }
+    }
   }
 })

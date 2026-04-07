@@ -316,7 +316,10 @@
       "phone": "El número de teléfono no es válido",
       "postal": "Introduce un código postal de 5 dígitos",
       "minLength": "Mínimo {min} caracteres",
-      "consent": "Debes aceptar la política de privacidad"
+      "consent": "Debes aceptar la política de privacidad",
+      "network": "No se pudo conectar con el servidor. Por favor, inténtalo de nuevo.",
+      "server": "El servicio de correo no está disponible temporalmente. Contáctanos por teléfono.",
+      "generic": "Ha ocurrido un error inesperado. Por favor, inténtalo más tarde."
     }
   },
   "about": {

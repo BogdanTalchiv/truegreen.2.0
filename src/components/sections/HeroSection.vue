@@ -135,18 +135,12 @@
   }
 
   .hero-title {
-    font-size: 3.25rem;
+    font-size: clamp(1.65rem, 5vw, 3.25rem);
     line-height: 1.15;
     color: #fff;
     text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
-
-    @media (max-width: 991.98px) {
-      font-size: 2.25rem;
-    }
-
-    @media (max-width: 575.98px) {
-      font-size: 1.75rem;
-    }
+    word-break: break-word;
+    hyphens: auto;
   }
 
   .hero-subtitle {
@@ -232,7 +226,8 @@
     font-size: 0.8rem;
     font-weight: 500;
     letter-spacing: 0.01em;
-    white-space: nowrap;
+    white-space: normal;       /* allow wrapping on tiny screens */
+    word-break: break-word;
 
     @media (max-width: 575.98px) {
       font-size: 0.72rem;

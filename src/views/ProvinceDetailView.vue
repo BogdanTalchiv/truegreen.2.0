@@ -180,9 +180,31 @@
     }
   ]
 
+  // Maps individual province slugs to their parent region slug
+  const PROVINCE_TO_REGION = {
+    'avila': 'castilla-y-leon', 'burgos': 'castilla-y-leon',
+    'leon': 'castilla-y-leon',  'palencia': 'castilla-y-leon',
+    'salamanca': 'castilla-y-leon', 'segovia': 'castilla-y-leon',
+    'soria': 'castilla-y-leon', 'valladolid': 'castilla-y-leon',
+    'zamora': 'castilla-y-leon',
+    'albacete': 'castilla-la-mancha', 'ciudad-real': 'castilla-la-mancha',
+    'cuenca': 'castilla-la-mancha', 'guadalajara': 'castilla-la-mancha',
+    'toledo': 'castilla-la-mancha',
+    'madrid': 'madrid',
+    'lugo': 'galicia', 'ourense': 'galicia',
+    'huesca': 'aragon', 'teruel': 'aragon', 'zaragoza': 'aragon',
+    'asturias': 'otras-regiones', 'cantabria': 'otras-regiones',
+    'la-rioja': 'otras-regiones', 'navarra': 'otras-regiones'
+  }
+
   const region = computed(() => {
     const slug = route.params.slug
-    return allRegions.find(r => r.slug === slug) || null
+    // Direct region match (e.g. /provincias/castilla-y-leon)
+    const direct = allRegions.find(r => r.slug === slug)
+    if (direct) return direct
+    // Province slug match (e.g. /provincias/avila → Castilla y León page)
+    const parentSlug = PROVINCE_TO_REGION[slug]
+    return parentSlug ? (allRegions.find(r => r.slug === parentSlug) || null) : null
   })
 
   const provincesRoute = computed(() =>

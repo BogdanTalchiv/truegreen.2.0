@@ -22,5 +22,6 @@
 </script>
 
 <style scoped>
-  .page-wrapper { padding-top: 5rem; }
+  /* TestimonialsSection already carries its own top padding */
+  .page-wrapper { padding-top: 4.5rem; }
 </style>

@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia'
+import { activateFullCaching, deactivateFullCaching } from '@/utils/cacheService'
 
 export const useUiStore = defineStore('ui', {
   state: () => ({
@@ -6,8 +7,13 @@ export const useUiStore = defineStore('ui', {
     isScrolled: false,
     currentSection: 'hero',
     isLoading: false,
-    showCookieBanner: !localStorage.getItem('tg-cookies-accepted')
+    showCookieBanner: !localStorage.getItem('tg-cookies-accepted'),
+    cookieConsent: localStorage.getItem('tg-cookies-accepted') || null
   }),
+
+  getters: {
+    hasFullConsent: (state) => state.cookieConsent === 'true'
+  },
 
   actions: {
     toggleMobileMenu() {
@@ -28,12 +34,14 @@ export const useUiStore = defineStore('ui', {
 
     acceptCookies() {
       this.showCookieBanner = false
-      localStorage.setItem('tg-cookies-accepted', 'true')
+      this.cookieConsent = 'true'
+      activateFullCaching()
     },
 
     declineCookies() {
       this.showCookieBanner = false
-      localStorage.setItem('tg-cookies-accepted', 'essential')
+      this.cookieConsent = 'essential'
+      deactivateFullCaching()
     }
   }
 })

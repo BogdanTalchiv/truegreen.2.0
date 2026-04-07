@@ -21,7 +21,7 @@
               </p>
               <p class="compact-sub mb-0">
                 {{ locale === 'es'
-                    ? 'Teléfono, WhatsApp o email — respuesta &lt;24 h.'
+                    ? 'Teléfono, WhatsApp o email — respuesta en menos de 24 h.'
                     : 'Phone, WhatsApp or email — reply within 24 h.'
                 }}
               </p>

@@ -316,7 +316,10 @@
       "phone": "Invalid phone number",
       "postal": "Enter a valid 5-digit postal code",
       "minLength": "Minimum {min} characters",
-      "consent": "You must agree to the privacy policy"
+      "consent": "You must agree to the privacy policy",
+      "network": "Could not reach the server. Please try again.",
+      "server": "The email service is temporarily unavailable. Please contact us by phone.",
+      "generic": "An unexpected error occurred. Please try again later."
     }
   },
   "about": {

@@ -205,7 +205,7 @@ router.beforeEach((to) => {
 router.afterEach((to) => {
   const t = i18n.global.t
   const titleKey = to.meta.titleKey
-  const appTitle = 'TrueGreen'
+  const appTitle = 'TrueGreen Energy'
 
   if (titleKey) {
     document.title = `${t(titleKey)} — ${appTitle}`

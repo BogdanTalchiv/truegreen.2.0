@@ -28,16 +28,50 @@
           <!-- ─── Success ─── -->
           <div v-if="formStore.isSubmitted && formStore.lastSubmission" class="success-block" data-aos="fade-up">
             <div class="success-icon-wrap">
-              <i class="bi bi-check-lg"></i>
+              <i class="bi bi-envelope-check-fill"></i>
             </div>
-            <h2 class="success-title">{{ locale === 'es' ? '¡Solicitud recibida!' : 'Request received!' }}</h2>
-            <p class="success-sub text-muted">{{ $t('form.success') }}</p>
+            <h2 class="success-title">
+              {{ locale === 'es' ? '¡Casi listo!' : 'Almost done!' }}
+            </h2>
+            <p class="success-sub">
+              {{
+                locale === 'es'
+                  ? 'Se ha abierto tu aplicación de correo con el mensaje ya redactado. Solo tienes que pulsar «Enviar».'
+                  : 'Your email app has opened with the message already written. Just click "Send".'
+              }}
+            </p>
+
+            <!-- Visual hint -->
+            <div class="mailto-hint">
+              <div class="mailto-hint-step">
+                <span class="mailto-hint-num">1</span>
+                <span>{{ locale === 'es' ? 'Se ha abierto Gmail / tu correo' : 'Gmail / your mail app opened' }}</span>
+              </div>
+              <div class="mailto-hint-arrow"><i class="bi bi-arrow-right"></i></div>
+              <div class="mailto-hint-step">
+                <span class="mailto-hint-num">2</span>
+                <span>{{ locale === 'es' ? 'El mensaje ya está escrito' : 'The message is already written' }}</span>
+              </div>
+              <div class="mailto-hint-arrow"><i class="bi bi-arrow-right"></i></div>
+              <div class="mailto-hint-step mailto-hint-step--final">
+                <span class="mailto-hint-num">3</span>
+                <span>{{ locale === 'es' ? 'Pulsa «Enviar» ✓' : 'Press "Send" ✓' }}</span>
+              </div>
+            </div>
+
+            <!-- Re-open link in case the tab didn't open -->
+            <p class="reopen-tip text-muted small mt-3">
+              {{ locale === 'es' ? '¿No se abrió el correo?' : "Didn't it open?" }}
+              <a href="#" class="text-success fw-semibold ms-1" @click.prevent="reopenMailto">
+                {{ locale === 'es' ? 'Haz clic aquí' : 'Click here' }}
+              </a>
+            </p>
 
             <!-- Summary table -->
-            <div class="summary-card">
+            <div class="summary-card mt-4">
               <h4 class="summary-card-title">
                 <i class="bi bi-clipboard2-data me-2 text-success"></i>
-                {{ locale === 'es' ? 'Resumen de tu solicitud' : 'Your request summary' }}
+                {{ locale === 'es' ? 'Datos enviados' : 'Submitted data' }}
               </h4>
               <div class="table-responsive">
                 <table class="summary-table">
@@ -251,16 +285,10 @@
                 <button
                   v-else
                   class="btn btn-tg-cta btn-submit"
-                  :disabled="formStore.isSubmitting"
                   @click="formStore.submitForm()"
                 >
-                  <span v-if="formStore.isSubmitting">
-                    <span class="spinner-border spinner-border-sm me-2"></span>
-                    {{ locale === 'es' ? 'Enviando…' : 'Sending…' }}
-                  </span>
-                  <span v-else>
-                    <i class="bi bi-send me-2"></i>{{ $t('form.submit') }}
-                  </span>
+                  <i class="bi bi-envelope-arrow-up me-2"></i>
+                  {{ locale === 'es' ? 'Abrir correo y enviar' : 'Open mail & send' }}
                 </button>
               </div>
             </div>
@@ -311,6 +339,10 @@
   const privacyRoute = computed(() =>
     locale.value === 'es' ? '/es/politica-privacidad' : '/en/privacy-policy'
   )
+
+  function reopenMailto() {
+    if (formStore.lastMailto) window.open(formStore.lastMailto, '_blank')
+  }
 
   /* Summary table rows */
   const SUMMARY_KEYS = ['propertyType','area','yearBuilt','hasAttic','county','city','postalCode','firstName','lastName','phone','email','message']
@@ -575,7 +607,69 @@
     margin-bottom: 0.5rem;
   }
 
-  .success-sub { margin-bottom: 2rem; }
+  .success-sub { margin-bottom: 1.5rem; font-size: 1.05rem; color: #4a5a4c; }
+
+  /* ── Mailto step hints ── */
+  .mailto-hint {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.5rem;
+
+    /* On very small screens hide the arrows and stack vertically */
+    @media (max-width: 420px) {
+      flex-direction: column;
+      gap: 0.4rem;
+
+      .mailto-hint-arrow { transform: rotate(90deg); }
+    }
+  }
+
+  .mailto-hint-step {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    background: #f1f8f2;
+    border: 1px solid #c8e6c9;
+    border-radius: 2rem;
+    padding: 0.45rem 0.9rem;
+    font-size: 0.83rem;
+    font-weight: 600;
+    color: #2e7d32;
+
+    &--final {
+      background: #2e7d32;
+      border-color: #2e7d32;
+      color: #fff;
+    }
+  }
+
+  .mailto-hint-num {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: rgba(46, 125, 50, 0.15);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.72rem;
+    font-weight: 800;
+    flex-shrink: 0;
+
+    .mailto-hint-step--final & {
+      background: rgba(255, 255, 255, 0.25);
+      color: #fff;
+    }
+  }
+
+  .mailto-hint-arrow {
+    color: #a5d6a7;
+    font-size: 0.8rem;
+  }
+
+  .reopen-tip { font-size: 0.82rem; }
 
   /* ── Summary card ── */
   .summary-card {

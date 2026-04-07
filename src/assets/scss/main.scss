@@ -25,6 +25,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
+  overflow-x: hidden;
 }
 
 body {
@@ -33,11 +34,24 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-width: 320px;
 }
 
 img {
   max-width: 100%;
   height: auto;
+}
+
+/* Global responsive safety */
+.container, .container-xl, .container-fluid {
+  padding-left: max(1rem, env(safe-area-inset-left));
+  padding-right: max(1rem, env(safe-area-inset-right));
+}
+
+/* Ensure all sections don't overflow on small screens */
+section {
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 // Navbar scrolled state

@@ -145,18 +145,30 @@
   }
 
   /* ── Step cards ── */
+  /*
+   * Blur fix: backdrop-filter combined with a translateY() transition causes
+   * subpixel jitter because the browser must re-composite two GPU layers each
+   * frame. Solution: remove backdrop-filter entirely and use a solid
+   * semi-transparent fill that doesn't require compositing. The card is
+   * pre-promoted to its own layer via will-change so the hover transform is
+   * always crisp.
+   */
   .hiw-card {
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(10, 35, 12, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.14);
     border-radius: 18px;
     padding: 1.75rem 1.5rem;
-    transition: background 0.25s ease, transform 0.25s ease;
+    /* Pre-promote layer so hover transform never triggers a re-composite */
+    will-change: transform;
+    transform: translate3d(0, 0, 0);
+    transition: background 0.22s ease, border-color 0.22s ease,
+                transform 0.22s ease, box-shadow 0.22s ease;
 
     &:hover {
-      background: rgba(255, 255, 255, 0.13);
-      transform: translateY(-4px);
+      background: rgba(30, 70, 35, 0.72);
+      border-color: rgba(165, 214, 167, 0.3);
+      transform: translate3d(0, -5px, 0);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
     }
   }
 
@@ -197,8 +209,7 @@
 
   /* ── Result banner ── */
   .hiw-result {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(8px);
+    background: rgba(30, 80, 35, 0.65);
     border: 1px solid rgba(76, 175, 80, 0.4);
     border-radius: 14px;
     padding: 1.25rem 2rem;
