@@ -53,11 +53,6 @@
                 <i class="bi bi-envelope me-2"></i>{{ EMAIL }}
               </a>
             </li>
-            <li class="mb-2">
-              <span class="text-white-50 small">
-                <i class="bi bi-geo-alt me-2"></i>{{ ADDRESS }}
-              </span>
-            </li>
           </ul>
         </div>
       </div>
@@ -91,8 +86,7 @@
     PHONE_URL,
     EMAIL,
     EMAIL_URL,
-    WHATSAPP_URL,
-    ADDRESS
+    WHATSAPP_URL
   } from '@/utils/constants'
 
   const { locale } = useI18n()

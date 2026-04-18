@@ -89,14 +89,6 @@
                     <div class="contact-item-sub">{{ $t('contact.email.response') }}</div>
                   </div>
                 </a>
-
-                <div class="contact-item contact-item--static">
-                  <div class="contact-item-icon"><i class="bi bi-geo-alt-fill"></i></div>
-                  <div>
-                    <div class="contact-item-label">{{ $t('contact.address.label') }}</div>
-                    <div class="contact-item-value">{{ ADDRESS }}</div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -131,8 +123,7 @@
     PHONE_URL,
     EMAIL,
     EMAIL_URL,
-    WHATSAPP_URL,
-    ADDRESS
+    WHATSAPP_URL
   } from '@/utils/constants'
 
   defineProps({

@@ -190,17 +190,17 @@
   }
 
   .navbar-logo {
-    height: 48px;
+    height: 56px;
     width: auto;
     object-fit: contain;
     transition: transform 0.2s ease, height 0.3s ease;
 
     @media (max-width: 575.98px) {
-      height: 38px;
+      height: 46px;
     }
 
     @media (min-width: 576px) and (max-width: 991.98px) {
-      height: 42px;
+      height: 50px;
     }
 
     &:hover {
@@ -209,14 +209,14 @@
   }
 
   .navbar-scrolled .navbar-logo {
-    height: 40px;
+    height: 48px;
 
     @media (max-width: 575.98px) {
-      height: 32px;
+      height: 40px;
     }
 
     @media (min-width: 576px) and (max-width: 991.98px) {
-      height: 36px;
+      height: 44px;
     }
   }
 
