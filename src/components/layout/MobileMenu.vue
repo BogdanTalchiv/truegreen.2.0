@@ -8,7 +8,7 @@
               <img
                 src="/images/vector.png"
                 alt="Truegreen Energy"
-                style="height: 48px; width: auto; object-fit: contain;"
+                style="height: 52px; width: auto; object-fit: contain;"
               />
               <span class="mobile-brand-text">
                 <span class="mobile-brand-top">Truegreen</span>
