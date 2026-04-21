@@ -63,7 +63,20 @@
                 <div class="mb-2">
                   <TgRating :score="review.rating" />
                 </div>
-                <p class="testimonial-text mb-0">"{{ review.text }}"</p>
+                <p class="testimonial-text">"{{ review.text }}"</p>
+
+                <div v-if="videoSources[index]" class="testimonial-video">
+                  <div class="testimonial-video-frame">
+                    <video
+                      :src="videoSources[index]"
+                      controls
+                      muted
+                      preload="metadata"
+                      playsinline
+                      class="testimonial-video-el"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -82,6 +95,14 @@
   const { tm, rt } = useI18n()
 
   const bgSrc = `${import.meta.env.BASE_URL}images/recenzii.png`
+
+  const videoSources = [
+    `${import.meta.env.BASE_URL}videos/video1.MP4`,
+    `${import.meta.env.BASE_URL}videos/video2.MP4`,
+    `${import.meta.env.BASE_URL}videos/video3.MP4`,
+    `${import.meta.env.BASE_URL}videos/video4.MP4`,
+    `${import.meta.env.BASE_URL}videos/video5.MP4`
+  ]
 
   const reviewsList = computed(() => {
     const raw = tm('testimonials.reviews')
@@ -194,6 +215,8 @@
     transition: transform 0.22s ease, box-shadow 0.22s ease;
     will-change: transform;
     transform: translateZ(0);
+    display: flex;
+    flex-direction: column;
 
     &:hover {
       transform: translate3d(0, -3px, 0);
@@ -222,8 +245,31 @@
     line-height: 1.6;
     font-style: italic;
     font-size: 0.9rem;
+    margin-bottom: 0;
+    flex: 1;
 
     @media (max-width: 575.98px) { font-size: 0.855rem; }
+  }
+
+  .testimonial-video {
+    margin-top: 0.9rem;
+  }
+
+  .testimonial-video-frame {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 14px;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(233, 236, 239, 0.9);
+  }
+
+  .testimonial-video-el {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0;
   }
 
   /* ── Mobile ── */

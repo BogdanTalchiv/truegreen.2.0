@@ -45,15 +45,10 @@
 
       <!-- Legal link -->
       <div class="text-center mt-4" data-aos="fade-up">
-        <a
-          href="https://www.miteco.gob.es/es/calidad-y-evaluacion-ambiental/planes-y-estrategias/plan-de-ahorro-y-eficiencia-energetica-paee"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="hiw-legal-link"
-        >
-          <i class="bi bi-box-arrow-up-right me-1"></i>
+        <router-link :to="contactPath" class="hiw-legal-link">
+          <i class="bi bi-arrow-right me-1"></i>
           {{ $t('howItWorks.legalLink') }}
-        </a>
+        </router-link>
       </div>
     </div>
   </section>
@@ -66,6 +61,7 @@
   void locale // referenced for reactivity
 
   const imgSrc = `${import.meta.env.BASE_URL}images/howitworks.jpg`
+  const contactPath = locale.value === 'es' ? '/es/contacto' : '/en/contact'
 
   const steps = [
     { key: 'step1' },
