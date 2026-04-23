@@ -106,7 +106,10 @@
                 : 'Check your eligibility in 2 minutes. No commitment, no cost.'
             }}
           </p>
-          <router-link :to="localePath('/eligibility', locale)" class="btn btn-tg-primary px-5 py-3">
+          <router-link
+            :to="locale === 'es' ? '/es/verificar-elegibilidad' : '/en/check-eligibility'"
+            class="btn btn-tg-primary px-5 py-3"
+          >
             {{ locale === 'es' ? '¿Soy elegible?' : 'Am I eligible?' }}
           </router-link>
         </div>

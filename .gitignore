@@ -4,3 +4,5 @@ dist
 *.local
 .env
 .env.production
+*.zip
+.vscode/meterian-problems-visibility-status/
